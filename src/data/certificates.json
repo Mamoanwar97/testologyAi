@@ -1,0 +1,23 @@
+[
+  {
+    "id": "aws-cloud-practitioner",
+    "title": "AWS Cloud Practitioner",
+    "description": "Validate your overall understanding of AWS Cloud concepts, core services, security, architecture, pricing, and support.",
+    "logo": "/logos/aws.png",
+    "chapters": ["all", "cloud-concepts", "security-and-compliance"]
+  },
+  {
+    "id": "azure-fundamentals",
+    "title": "Azure Fundamentals (AZ-900)",
+    "description": "Demonstrate foundational knowledge of cloud concepts, core Azure services, Azure management and governance.",
+    "logo": "/logos/azure.png",
+    "chapters": ["all", "cloud-concepts", "azure-services"]
+  },
+  {
+    "id": "comptia-a-plus",
+    "title": "CompTIA A+",
+    "description": "Prove your competency in troubleshooting, networking, mobile devices, hardware, virtualization, and cloud computing.",
+    "logo": "/logos/comptia.png",
+    "chapters": ["all", "hardware", "networking"]
+  }
+]
