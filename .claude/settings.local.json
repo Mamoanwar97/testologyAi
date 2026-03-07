@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:testologyai.com)",
+      "WebFetch(domain:www.testologyai.com)"
+    ]
+  }
+}
