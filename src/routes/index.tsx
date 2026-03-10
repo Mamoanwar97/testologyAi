@@ -70,7 +70,7 @@ function HomePage() {
           {/* Za'atar mascot */}
           <div className="flex-shrink-0">
             <img
-              src="/halfRobot.png"
+              src={`${import.meta.env.BASE_URL}halfRobot.png`}
               alt="Za'atar — Testology mascot"
               className="h-64 w-auto drop-shadow-2xl sm:h-80 lg:h-96"
             />

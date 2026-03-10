@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://testology.app/sitemap.xml
+Sitemap: https://mamoanwar97.github.io/testologyAi/sitemap.xml

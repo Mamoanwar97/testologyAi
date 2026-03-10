@@ -7,7 +7,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { writeFileSync, mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 
-const SITE_URL = 'https://testology.app'
+const SITE_URL = 'https://mamoanwar97.github.io/testologyAi'
 
 function sitemapPlugin() {
   return {
@@ -31,23 +31,23 @@ function sitemapPlugin() {
         '</urlset>',
       ].join('\n')
 
-      const outDir = resolve(import.meta.dirname, '.output/public')
-      try {
-        mkdirSync(outDir, { recursive: true })
-        writeFileSync(resolve(outDir, 'sitemap.xml'), sitemap)
-        console.log('Generated sitemap.xml')
-      } catch {
-        // output dir may differ, try dist as fallback
-        const distDir = resolve(import.meta.dirname, 'dist')
-        mkdirSync(distDir, { recursive: true })
-        writeFileSync(resolve(distDir, 'sitemap.xml'), sitemap)
-        console.log('Generated sitemap.xml (dist)')
+      // Write sitemap to both possible output directories
+      for (const dir of ['dist/client', '.output/public']) {
+        const outDir = resolve(import.meta.dirname, dir)
+        try {
+          mkdirSync(outDir, { recursive: true })
+          writeFileSync(resolve(outDir, 'sitemap.xml'), sitemap)
+          console.log(`Generated sitemap.xml (${dir})`)
+        } catch {
+          // directory may not exist yet, skip
+        }
       }
     },
   } satisfies import('vite').Plugin
 }
 
 const config = defineConfig({
+  base: '/testologyAi/',
   plugins: [
     devtools(),
     tsconfigPaths({ projects: ['./tsconfig.json'] }),

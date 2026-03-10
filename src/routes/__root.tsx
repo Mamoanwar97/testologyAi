@@ -29,7 +29,7 @@ export const Route = createRootRoute({
         content:
           'Practice smarter, certify faster. Free practice exams for AWS, Azure, CompTIA, and more.',
       },
-      { property: 'og:image', content: '/favicon-logo.png' },
+      { property: 'og:image', content: `${import.meta.env.BASE_URL}favicon-logo.png` },
       { property: 'og:site_name', content: 'Testology' },
       // Twitter
       { name: 'twitter:card', content: 'summary' },
@@ -39,11 +39,11 @@ export const Route = createRootRoute({
         content:
           'Free practice exams for AWS, Azure, CompTIA, and more IT certifications.',
       },
-      { name: 'twitter:image', content: '/favicon-logo.png' },
+      { name: 'twitter:image', content: `${import.meta.env.BASE_URL}favicon-logo.png` },
     ],
     links: [
       { rel: 'stylesheet', href: appCss },
-      { rel: 'icon', href: '/favicon-logo.png', type: 'image/png' },
+      { rel: 'icon', href: `${import.meta.env.BASE_URL}favicon-logo.png`, type: 'image/png' },
     ],
   }),
   shellComponent: RootDocument,

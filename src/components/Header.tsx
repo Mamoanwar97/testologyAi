@@ -12,7 +12,7 @@ export default function Header() {
           className="flex items-center gap-2 text-lg font-bold tracking-tight text-foreground no-underline"
         >
           <img
-            src="/favicon-logo.png"
+            src={`${import.meta.env.BASE_URL}favicon-logo.png`}
             alt=""
             className="h-8 w-8"
           />

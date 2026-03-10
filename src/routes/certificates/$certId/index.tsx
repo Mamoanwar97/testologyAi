@@ -20,7 +20,7 @@ export const Route = createFileRoute('/certificates/$certId/')({
         { name: 'description', content: description },
         { property: 'og:title', content: `${title} — Testology` },
         { property: 'og:description', content: description },
-        { property: 'og:image', content: '/favicon-logo.png' },
+        { property: 'og:image', content: `${import.meta.env.BASE_URL}favicon-logo.png` },
       ],
     }
   },
@@ -32,7 +32,7 @@ function NotFoundComponent() {
   return (
     <main className="flex min-h-[60vh] flex-col items-center justify-center px-4 py-16 text-center">
       <img
-        src="/halfRobot.png"
+        src={`${import.meta.env.BASE_URL}halfRobot.png`}
         alt="Za'atar — Testology mascot"
         className="mb-6 h-48 w-auto opacity-80"
       />
@@ -43,7 +43,7 @@ function NotFoundComponent() {
         This certification doesn't exist. Let's get you back on track.
       </p>
       <a
-        href="/certificates"
+        href={`${import.meta.env.BASE_URL}certificates`}
         className="text-sm font-medium text-primary hover:underline"
       >
         Back to Certificates
