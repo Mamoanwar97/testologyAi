@@ -21,13 +21,13 @@ export default function QuestionCard({ question, index, onAnswer }: QuestionCard
   }
 
   return (
-    <div className="rounded-xl border border-border bg-card p-6">
-      <p className="mb-4 text-base font-medium text-foreground">
+    <fieldset className="rounded-xl border border-border bg-card p-4 sm:p-6">
+      <legend className="mb-4 text-base font-medium text-foreground">
         <span className="mr-2 text-muted-foreground">{index + 1}.</span>
         {question.text}
-      </p>
+      </legend>
 
-      <div className="space-y-2">
+      <div className="space-y-2" role="radiogroup" aria-label={`Question ${index + 1}`}>
         {question.options.map((option) => {
           const isSelected = selectedId === option.id
           const isCorrectOption = option.id === question.correctAnswer
@@ -47,10 +47,12 @@ export default function QuestionCard({ question, index, onAnswer }: QuestionCard
             <button
               key={option.id}
               type="button"
+              role="radio"
+              aria-checked={isSelected}
               onClick={() => handleSelect(option.id)}
               disabled={answered}
               className={cn(
-                'flex w-full items-center gap-3 rounded-lg border px-4 py-3 text-left text-sm transition',
+                'flex w-full items-center gap-3 rounded-lg border px-3 py-2.5 text-left text-sm transition sm:px-4 sm:py-3',
                 optionStyle,
                 answered && 'cursor-default',
               )}
@@ -68,10 +70,10 @@ export default function QuestionCard({ question, index, onAnswer }: QuestionCard
       </div>
 
       {answered && question.explanation && (
-        <div className="mt-4 rounded-lg bg-muted px-4 py-3 text-sm text-muted-foreground">
+        <div className="mt-4 rounded-lg bg-muted px-3 py-2.5 text-sm text-muted-foreground sm:px-4 sm:py-3" aria-live="polite">
           {question.explanation}
         </div>
       )}
-    </div>
+    </fieldset>
   )
 }

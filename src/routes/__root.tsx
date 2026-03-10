@@ -57,9 +57,15 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body className="flex min-h-screen flex-col font-sans antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground focus:outline-none"
+        >
+          Skip to main content
+        </a>
         <Header />
         <ErrorBoundary>
-          <div className="flex-1">{children}</div>
+          <div id="main-content" className="flex-1">{children}</div>
         </ErrorBoundary>
         <Footer />
         <TanStackDevtools

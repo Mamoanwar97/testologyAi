@@ -27,6 +27,9 @@ export const Route = createFileRoute(
           name: 'description',
           content: `Timed exam for ${chTitle} — ${certTitle}. 60-minute countdown with exam simulation.`,
         },
+        { property: 'og:title', content: `Exam: ${chTitle} — ${certTitle} — Testology` },
+        { property: 'og:description', content: `Timed exam for ${chTitle} — ${certTitle}.` },
+        { property: 'og:image', content: '/favicon-logo.png' },
       ],
     }
   },
@@ -134,6 +137,21 @@ function ExamPage() {
     )
   }
 
+  // Empty state — chapter has no questions
+  if (chapter.questions.length === 0) {
+    return (
+      <main className="flex min-h-[60vh] flex-col items-center justify-center px-4 py-16 text-center">
+        <img
+          src="/halfRobot.png"
+          alt="Za'atar — Testology mascot"
+          className="mb-6 h-40 w-auto opacity-80"
+        />
+        <p className="text-lg font-medium text-foreground">No questions available yet</p>
+        <p className="mt-1 text-sm text-muted-foreground">Check back later for new content.</p>
+      </main>
+    )
+  }
+
   // Waiting for questions to load
   if (exam.questions.length === 0) {
     return (
@@ -167,7 +185,7 @@ function ExamPage() {
           </div>
 
           {/* Questions */}
-          <div className="space-y-6">
+          <section aria-label="Exam questions" className="space-y-6">
             {exam.questions.map((question, index) => (
               <ExamQuestionCard
                 key={question.id}
@@ -177,7 +195,7 @@ function ExamPage() {
                 onSelect={exam.selectAnswer}
               />
             ))}
-          </div>
+          </section>
 
           {/* Submit */}
           <div className="mt-10 flex justify-center">
@@ -190,9 +208,9 @@ function ExamPage() {
 
       {/* Review Modal */}
       {showReviewModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50" role="dialog" aria-modal="true" aria-labelledby="review-title">
           <div className="mx-4 w-full max-w-md rounded-xl bg-card p-6 shadow-lg">
-            <h2 className="mb-4 text-xl font-bold text-foreground">
+            <h2 id="review-title" className="mb-4 text-xl font-bold text-foreground">
               Review Submission
             </h2>
             <div className="mb-6 space-y-2 text-sm">
@@ -226,9 +244,9 @@ function ExamPage() {
 
       {/* Exit Confirmation Modal */}
       {blocker.status === 'blocked' && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50" role="dialog" aria-modal="true" aria-labelledby="exit-title">
           <div className="mx-4 w-full max-w-md rounded-xl bg-card p-6 shadow-lg">
-            <h2 className="mb-2 text-xl font-bold text-foreground">
+            <h2 id="exit-title" className="mb-2 text-xl font-bold text-foreground">
               Leave Exam?
             </h2>
             <p className="mb-6 text-sm text-muted-foreground">

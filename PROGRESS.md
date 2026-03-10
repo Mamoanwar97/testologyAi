@@ -112,17 +112,30 @@
 
 ---
 
-## Remaining
-
 ### Step 10: Polish & Responsiveness
-- [ ] Mobile responsiveness across all pages
-- [ ] Accessibility: keyboard navigation, focus management, ARIA live regions, icon+text feedback (not color alone)
-- [ ] Verify localStorage behavior (cleanup on new attempt, resume prompt)
-- [ ] Test all navigation guards (in-app + beforeunload)
-- [ ] Verify SEO: unique titles, meta tags, sitemap, OpenGraph
-- [ ] 404 / invalid route handling → redirect to `/certificates`
-- [ ] Empty states with Za'atar illustration
-- [ ] Error boundary with Za'atar illustration
+- [x] Mobile responsiveness across all pages
+  - Responsive score circle (h-28 → h-36), responsive padding on question cards (p-4 → p-6), responsive timer sizing
+  - Hidden "Testology" text on mobile (logo only), responsive font sizes
+- [x] Accessibility: keyboard navigation, focus management, ARIA live regions, icon+text feedback (not color alone)
+  - Skip-to-main-content link in root layout
+  - `aria-label` on logo link, `role="dialog"` + `aria-modal` on exam modals
+  - `<fieldset>` + `<legend>` + `role="radiogroup"` on question cards
+  - `aria-checked` on answer option buttons
+  - `aria-live` on explanation reveal, score circle with `aria-label`
+  - Timer only announces at 5-min, 1-min, and 0 thresholds (not every second)
+  - Focus ring on ThemeToggle button
+  - Confetti respects `prefers-reduced-motion`
+- [x] Verify localStorage behavior (cleanup on new attempt, resume prompt)
+- [x] Test all navigation guards (in-app + beforeunload)
+- [x] Verify SEO: unique titles, meta tags, sitemap, OpenGraph
+  - Added `og:image` to all routes (certificates, chapters, practice, exam, results)
+  - Expanded sitemap with certificate detail pages
+- [x] 404 / invalid route handling → redirect to `/certificates`
+  - Added catch-all `src/routes/$.tsx` with Za'atar 404 page
+- [x] Empty states with Za'atar illustration
+  - Practice and exam pages show Za'atar when chapter has zero questions
+- [x] Error boundary with Za'atar illustration (already in place)
+- [x] TypeScript compiles cleanly
 
 ---
 

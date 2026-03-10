@@ -18,9 +18,13 @@ export default function ResultsSummary({
   return (
     <div className="mb-8 text-center">
       {/* Score circle */}
-      <div className="mx-auto mb-6 flex h-36 w-36 flex-col items-center justify-center rounded-full border-4 border-border bg-card shadow-sm">
-        <span className="text-4xl font-bold text-foreground">{score}/{total}</span>
-        <span className="text-lg font-medium text-muted-foreground">{percentage}%</span>
+      <div
+        className="mx-auto mb-6 flex h-28 w-28 flex-col items-center justify-center rounded-full border-4 border-border bg-card shadow-sm sm:h-36 sm:w-36"
+        aria-label={`Score: ${score} out of ${total}, ${percentage} percent`}
+        role="img"
+      >
+        <span className="text-3xl font-bold text-foreground sm:text-4xl">{score}/{total}</span>
+        <span className="text-base font-medium text-muted-foreground sm:text-lg">{percentage}%</span>
       </div>
 
       {/* Pass/Fail message for exam mode */}

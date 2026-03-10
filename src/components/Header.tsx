@@ -8,14 +8,15 @@ export default function Header() {
         {/* Logo */}
         <Link
           to="/"
+          aria-label="Testology Home"
           className="flex items-center gap-2 text-lg font-bold tracking-tight text-foreground no-underline"
         >
           <img
             src="/favicon-logo.png"
-            alt="Testology logo"
+            alt=""
             className="h-8 w-8"
           />
-          Testology
+          <span className="hidden sm:inline">Testology</span>
         </Link>
 
         {/* Nav links */}

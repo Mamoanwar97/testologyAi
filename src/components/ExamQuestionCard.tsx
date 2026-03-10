@@ -15,13 +15,13 @@ export default function ExamQuestionCard({
   onSelect,
 }: ExamQuestionCardProps) {
   return (
-    <div className="rounded-xl border border-border bg-card p-6">
-      <p className="mb-4 text-base font-medium text-foreground">
+    <fieldset className="rounded-xl border border-border bg-card p-4 sm:p-6">
+      <legend className="mb-4 text-base font-medium text-foreground">
         <span className="mr-2 text-muted-foreground">{index + 1}.</span>
         {question.text}
-      </p>
+      </legend>
 
-      <div className="space-y-2">
+      <div className="space-y-2" role="radiogroup" aria-label={`Question ${index + 1}`}>
         {question.options.map((option) => {
           const isSelected = selectedAnswer === option.id
 
@@ -29,9 +29,11 @@ export default function ExamQuestionCard({
             <button
               key={option.id}
               type="button"
+              role="radio"
+              aria-checked={isSelected}
               onClick={() => onSelect(question.id, option.id)}
               className={cn(
-                'flex w-full items-center gap-3 rounded-lg border px-4 py-3 text-left text-sm transition',
+                'flex w-full items-center gap-3 rounded-lg border px-3 py-2.5 text-left text-sm transition sm:px-4 sm:py-3',
                 isSelected
                   ? 'border-primary bg-primary/10'
                   : 'border-border bg-background hover:bg-muted',
@@ -52,6 +54,6 @@ export default function ExamQuestionCard({
           )
         })}
       </div>
-    </div>
+    </fieldset>
   )
 }

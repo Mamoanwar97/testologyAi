@@ -37,6 +37,9 @@ export const Route = createFileRoute(
           name: 'description',
           content: `Results for ${chTitle} — ${certTitle}.`,
         },
+        { property: 'og:title', content: `Results: ${chTitle} — ${certTitle} — Testology` },
+        { property: 'og:description', content: `Results for ${chTitle} — ${certTitle}.` },
+        { property: 'og:image', content: '/favicon-logo.png' },
       ],
     }
   },
@@ -104,9 +107,11 @@ function ResultsPage() {
   const percentage = total > 0 ? Math.round((score / total) * 100) : 0
   const passed = mode === 'exam' ? percentage >= PASS_THRESHOLD * 100 : undefined
 
-  // Fire confetti on pass
+  // Fire confetti on pass (respect reduced motion)
   useEffect(() => {
     if (mode === 'exam' && passed && !confettiFired.current) {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      if (prefersReducedMotion) return
       confettiFired.current = true
       const end = Date.now() + 2000
       const colors = ['#2563EB', '#00B4FF', '#16A34A', '#60A5FA']

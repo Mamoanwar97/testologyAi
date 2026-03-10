@@ -20,6 +20,7 @@ export const Route = createFileRoute('/certificates/$certId/')({
         { name: 'description', content: description },
         { property: 'og:title', content: `${title} — Testology` },
         { property: 'og:description', content: description },
+        { property: 'og:image', content: '/favicon-logo.png' },
       ],
     }
   },

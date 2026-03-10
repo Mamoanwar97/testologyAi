@@ -16,6 +16,9 @@ function sitemapPlugin() {
       const routes = [
         '/',
         '/certificates',
+        '/certificates/aws-cloud-practitioner',
+        '/certificates/azure-fundamentals',
+        '/certificates/comptia-a-plus',
       ]
 
       const sitemap = [

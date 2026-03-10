@@ -24,6 +24,9 @@ export const Route = createFileRoute(
           name: 'description',
           content: `Practice ${chTitle} questions for ${certTitle}. Get instant feedback on every answer.`,
         },
+        { property: 'og:title', content: `Practice: ${chTitle} — ${certTitle} — Testology` },
+        { property: 'og:description', content: `Practice ${chTitle} questions for ${certTitle}.` },
+        { property: 'og:image', content: '/favicon-logo.png' },
       ],
     }
   },
@@ -97,29 +100,43 @@ function PracticePage() {
         </div>
 
         {/* Questions */}
-        <div className="space-y-6">
-          {chapter.questions.map((question, index) => (
-            <QuestionCard
-              key={question.id}
-              question={question}
-              index={index}
-              onAnswer={handleAnswer}
+        {totalQuestions === 0 ? (
+          <div className="flex flex-col items-center justify-center py-16 text-center">
+            <img
+              src="/halfRobot.png"
+              alt="Za'atar — Testology mascot"
+              className="mb-6 h-40 w-auto opacity-80"
             />
-          ))}
-        </div>
+            <p className="text-lg font-medium text-foreground">No questions available yet</p>
+            <p className="mt-1 text-sm text-muted-foreground">Check back later for new content.</p>
+          </div>
+        ) : (
+          <>
+            <section aria-label="Practice questions" className="space-y-6">
+              {chapter.questions.map((question, index) => (
+                <QuestionCard
+                  key={question.id}
+                  question={question}
+                  index={index}
+                  onAnswer={handleAnswer}
+                />
+              ))}
+            </section>
 
-        {/* Submit */}
-        <div className="mt-10 flex justify-center">
-          <Button
-            size="lg"
-            onClick={handleSubmit}
-            disabled={!allAnswered}
-          >
-            {allAnswered
-              ? 'Submit Answers'
-              : `Answer all questions (${answeredCount}/${totalQuestions})`}
-          </Button>
-        </div>
+            {/* Submit */}
+            <div className="mt-10 flex justify-center">
+              <Button
+                size="lg"
+                onClick={handleSubmit}
+                disabled={!allAnswered}
+              >
+                {allAnswered
+                  ? 'Submit Answers'
+                  : `Answer all questions (${answeredCount}/${totalQuestions})`}
+              </Button>
+            </div>
+          </>
+        )}
       </div>
     </main>
   )

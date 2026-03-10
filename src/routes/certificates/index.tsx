@@ -17,6 +17,7 @@ export const Route = createFileRoute('/certificates/')({
         content:
           'Browse IT certification practice exams. AWS, Azure, CompTIA, and more.',
       },
+      { property: 'og:image', content: '/favicon-logo.png' },
     ],
   }),
   component: CertificatesPage,

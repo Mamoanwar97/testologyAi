@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CertificatesIndexRouteImport } from './routes/certificates/index'
 import { Route as CertificatesCertIdIndexRouteImport } from './routes/certificates/$certId/index'
@@ -16,6 +17,11 @@ import { Route as CertificatesCertIdChaptersChapterIdResultsRouteImport } from '
 import { Route as CertificatesCertIdChaptersChapterIdPracticeRouteImport } from './routes/certificates/$certId/chapters/$chapterId/practice'
 import { Route as CertificatesCertIdChaptersChapterIdExamRouteImport } from './routes/certificates/$certId/chapters/$chapterId/exam'
 
+const SplatRoute = SplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -52,6 +58,7 @@ const CertificatesCertIdChaptersChapterIdExamRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/certificates/': typeof CertificatesIndexRoute
   '/certificates/$certId/': typeof CertificatesCertIdIndexRoute
   '/certificates/$certId/chapters/$chapterId/exam': typeof CertificatesCertIdChaptersChapterIdExamRoute
@@ -60,6 +67,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/certificates': typeof CertificatesIndexRoute
   '/certificates/$certId': typeof CertificatesCertIdIndexRoute
   '/certificates/$certId/chapters/$chapterId/exam': typeof CertificatesCertIdChaptersChapterIdExamRoute
@@ -69,6 +77,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/certificates/': typeof CertificatesIndexRoute
   '/certificates/$certId/': typeof CertificatesCertIdIndexRoute
   '/certificates/$certId/chapters/$chapterId/exam': typeof CertificatesCertIdChaptersChapterIdExamRoute
@@ -79,6 +88,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/$'
     | '/certificates/'
     | '/certificates/$certId/'
     | '/certificates/$certId/chapters/$chapterId/exam'
@@ -87,6 +97,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/$'
     | '/certificates'
     | '/certificates/$certId'
     | '/certificates/$certId/chapters/$chapterId/exam'
@@ -95,6 +106,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/$'
     | '/certificates/'
     | '/certificates/$certId/'
     | '/certificates/$certId/chapters/$chapterId/exam'
@@ -104,6 +116,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SplatRoute: typeof SplatRoute
   CertificatesIndexRoute: typeof CertificatesIndexRoute
   CertificatesCertIdIndexRoute: typeof CertificatesCertIdIndexRoute
   CertificatesCertIdChaptersChapterIdExamRoute: typeof CertificatesCertIdChaptersChapterIdExamRoute
@@ -113,6 +126,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/$': {
+      id: '/$'
+      path: '/$'
+      fullPath: '/$'
+      preLoaderRoute: typeof SplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -160,6 +180,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SplatRoute: SplatRoute,
   CertificatesIndexRoute: CertificatesIndexRoute,
   CertificatesCertIdIndexRoute: CertificatesCertIdIndexRoute,
   CertificatesCertIdChaptersChapterIdExamRoute:
