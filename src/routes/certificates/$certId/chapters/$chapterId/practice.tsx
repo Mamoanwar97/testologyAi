@@ -1,38 +1,47 @@
-import { useState, useCallback } from 'react'
-import { Link, createFileRoute, notFound } from '@tanstack/react-router'
-import QuestionCard from '#/components/QuestionCard'
-import { Button } from '#/components/ui/button'
-import { getCertificateById, getChapterById } from '#/utils/data'
+import { useState, useCallback } from "react";
+import { Link, createFileRoute, notFound } from "@tanstack/react-router";
+import QuestionCard from "#/components/QuestionCard";
+import { Button } from "#/components/ui/button";
+import { getCertificateById, getChapterById } from "#/utils/data";
 
 export const Route = createFileRoute(
-  '/certificates/$certId/chapters/$chapterId/practice',
+  "/certificates/$certId/chapters/$chapterId/practice",
 )({
   loader: ({ params }) => {
-    const certificate = getCertificateById(params.certId)
-    if (!certificate) throw notFound()
-    const chapter = getChapterById(params.certId, params.chapterId)
-    if (!chapter) throw notFound()
-    return { certificate, chapter }
+    const certificate = getCertificateById(params.certId);
+    if (!certificate) throw notFound();
+    const chapter = getChapterById(params.certId, params.chapterId);
+    if (!chapter) throw notFound();
+    return { certificate, chapter };
   },
   head: ({ loaderData }) => {
-    const certTitle = loaderData?.certificate.title ?? 'Certificate'
-    const chTitle = loaderData?.chapter.title ?? 'Practice'
+    const certTitle = loaderData?.certificate.title ?? "Certificate";
+    const chTitle = loaderData?.chapter.title ?? "Practice";
     return {
       meta: [
         { title: `Practice: ${chTitle} — ${certTitle} — Testology` },
         {
-          name: 'description',
+          name: "description",
           content: `Practice ${chTitle} questions for ${certTitle}. Get instant feedback on every answer.`,
         },
-        { property: 'og:title', content: `Practice: ${chTitle} — ${certTitle} — Testology` },
-        { property: 'og:description', content: `Practice ${chTitle} questions for ${certTitle}.` },
-        { property: 'og:image', content: `${import.meta.env.BASE_URL}favicon-logo.png` },
+        {
+          property: "og:title",
+          content: `Practice: ${chTitle} — ${certTitle} — Testology`,
+        },
+        {
+          property: "og:description",
+          content: `Practice ${chTitle} questions for ${certTitle}.`,
+        },
+        {
+          property: "og:image",
+          content: `${import.meta.env.BASE_URL}thumbnail.png`,
+        },
       ],
-    }
+    };
   },
   notFoundComponent: NotFoundComponent,
   component: PracticePage,
-})
+});
 
 function NotFoundComponent() {
   return (
@@ -55,27 +64,27 @@ function NotFoundComponent() {
         Back to Certificates
       </a>
     </main>
-  )
+  );
 }
 
 function PracticePage() {
-  const { certificate, chapter } = Route.useLoaderData()
-  const { certId, chapterId } = Route.useParams()
-  const [answers, setAnswers] = useState<Record<string, string>>({})
+  const { certificate, chapter } = Route.useLoaderData();
+  const { certId, chapterId } = Route.useParams();
+  const [answers, setAnswers] = useState<Record<string, string>>({});
 
   const handleAnswer = useCallback((questionId: string, answerId: string) => {
-    setAnswers((prev) => ({ ...prev, [questionId]: answerId }))
-  }, [])
+    setAnswers((prev) => ({ ...prev, [questionId]: answerId }));
+  }, []);
 
-  const totalQuestions = chapter.questions.length
-  const answeredCount = Object.keys(answers).length
-  const allAnswered = answeredCount === totalQuestions
+  const totalQuestions = chapter.questions.length;
+  const answeredCount = Object.keys(answers).length;
+  const allAnswered = answeredCount === totalQuestions;
 
   function handleSubmit() {
     // Store answers in localStorage for the results page
-    const key = `testology:${certId}:${chapterId}:practice`
-    localStorage.setItem(key, JSON.stringify(answers))
-    window.location.href = `${import.meta.env.BASE_URL}certificates/${certId}/chapters/${chapterId}/results?mode=practice`
+    const key = `testology:${certId}:${chapterId}:practice`;
+    localStorage.setItem(key, JSON.stringify(answers));
+    window.location.href = `${import.meta.env.BASE_URL}certificates/${certId}/chapters/${chapterId}/results?mode=practice`;
   }
 
   return (
@@ -107,8 +116,12 @@ function PracticePage() {
               alt="Za'atar — Testology mascot"
               className="mb-6 h-40 w-auto opacity-80"
             />
-            <p className="text-lg font-medium text-foreground">No questions available yet</p>
-            <p className="mt-1 text-sm text-muted-foreground">Check back later for new content.</p>
+            <p className="text-lg font-medium text-foreground">
+              No questions available yet
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Check back later for new content.
+            </p>
           </div>
         ) : (
           <>
@@ -125,13 +138,9 @@ function PracticePage() {
 
             {/* Submit */}
             <div className="mt-10 flex justify-center">
-              <Button
-                size="lg"
-                onClick={handleSubmit}
-                disabled={!allAnswered}
-              >
+              <Button size="lg" onClick={handleSubmit} disabled={!allAnswered}>
                 {allAnswered
-                  ? 'Submit Answers'
+                  ? "Submit Answers"
                   : `Answer all questions (${answeredCount}/${totalQuestions})`}
               </Button>
             </div>
@@ -139,5 +148,5 @@ function PracticePage() {
         )}
       </div>
     </main>
-  )
+  );
 }

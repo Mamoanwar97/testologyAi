@@ -1,23 +1,23 @@
-import { Link, createFileRoute } from '@tanstack/react-router'
-import { buttonVariants } from '#/components/ui/button'
-import { getCertificates } from '#/utils/data'
+import { Link, createFileRoute } from "@tanstack/react-router";
+import { buttonVariants } from "#/components/ui/button";
+import { getCertificates } from "#/utils/data";
 
-export const Route = createFileRoute('/')({
+export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: 'Testology — IT Certification Practice Exams' },
+      { title: "Testology — IT Certification Practice Exams" },
       {
-        name: 'description',
+        name: "description",
         content:
-          'Practice smarter, certify faster. Free practice exams and study tools for AWS, Azure, CompTIA, and more IT certifications.',
+          "Practice smarter, certify faster. Free practice exams and study tools for AWS, Azure, CompTIA, and more IT certifications.",
       },
     ],
   }),
   component: HomePage,
-})
+});
 
 function HomePage() {
-  const certificates = getCertificates()
+  const certificates = getCertificates();
 
   return (
     <main>
@@ -31,7 +31,7 @@ function HomePage() {
           {/* Text content */}
           <div className="flex-1 text-center lg:text-left">
             <h1 className="mb-4 text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Master Your{' '}
+              Master Your{" "}
               <span className="bg-gradient-to-r from-testology-cyan to-testology-light-blue bg-clip-text text-transparent">
                 IT Certifications
               </span>
@@ -44,7 +44,7 @@ function HomePage() {
             <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
               <Link
                 to="/certificates"
-                className={buttonVariants({ size: 'lg' }) + ' no-underline'}
+                className={buttonVariants({ size: "lg" }) + " no-underline"}
               >
                 Get Started
               </Link>
@@ -53,7 +53,9 @@ function HomePage() {
             {/* Stats */}
             <div className="mt-10 flex flex-wrap justify-center gap-8 lg:justify-start">
               <div className="text-center">
-                <p className="text-2xl font-bold text-white">{certificates.length}</p>
+                <p className="text-2xl font-bold text-white">
+                  {certificates.length}
+                </p>
                 <p className="text-sm text-testology-sky/60">Certifications</p>
               </div>
               <div className="text-center">
@@ -87,16 +89,16 @@ function HomePage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: 'Practice Mode',
-                desc: 'Get instant feedback on every question. Learn from detailed explanations as you go.',
+                title: "Practice Mode",
+                desc: "Get instant feedback on every question. Learn from detailed explanations as you go.",
               },
               {
-                title: 'Exam Simulation',
-                desc: 'Timed exams that mirror the real test experience. Build confidence before exam day.',
+                title: "Exam Simulation",
+                desc: "Timed exams that mirror the real test experience. Build confidence before exam day.",
               },
               {
-                title: 'Track Progress',
-                desc: 'See your scores, review wrong answers, and focus on areas that need improvement.',
+                title: "Track Progress",
+                desc: "See your scores, review wrong answers, and focus on areas that need improvement.",
               },
             ].map((feature) => (
               <article
@@ -126,12 +128,12 @@ function HomePage() {
           </p>
           <Link
             to="/certificates"
-            className={buttonVariants({ size: 'lg' }) + ' no-underline'}
+            className={buttonVariants({ size: "lg" }) + " no-underline"}
           >
             Browse Certificates
           </Link>
         </div>
       </section>
     </main>
-  )
+  );
 }

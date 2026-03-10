@@ -1,27 +1,27 @@
-import { Component, type ErrorInfo, type ReactNode } from 'react'
-import { Button, buttonVariants } from '#/components/ui/button'
+import { Component, type ErrorInfo, type ReactNode } from "react";
+import { Button, buttonVariants } from "#/components/ui/button";
 
 interface Props {
-  children: ReactNode
+  children: ReactNode;
 }
 
 interface State {
-  hasError: boolean
-  error: Error | null
+  hasError: boolean;
+  error: Error | null;
 }
 
 export default class ErrorBoundary extends Component<Props, State> {
   constructor(props: Props) {
-    super(props)
-    this.state = { hasError: false, error: null }
+    super(props);
+    this.state = { hasError: false, error: null };
   }
 
   static getDerivedStateFromError(error: Error): State {
-    return { hasError: true, error }
+    return { hasError: true, error };
   }
 
   componentDidCatch(error: Error, info: ErrorInfo) {
-    console.error('ErrorBoundary caught:', error, info)
+    console.error("ErrorBoundary caught:", error, info);
   }
 
   render() {
@@ -41,13 +41,13 @@ export default class ErrorBoundary extends Component<Props, State> {
             going back to the home page.
           </p>
           <div className="flex gap-3">
-            <Button
-              variant="outline"
-              onClick={() => window.location.reload()}
-            >
+            <Button variant="outline" onClick={() => window.location.reload()}>
               Refresh Page
             </Button>
-            <a href={import.meta.env.BASE_URL} className={buttonVariants() + ' no-underline'}>
+            <a
+              href={import.meta.env.BASE_URL}
+              className={buttonVariants() + " no-underline"}
+            >
               Go Home
             </a>
           </div>
@@ -57,9 +57,9 @@ export default class ErrorBoundary extends Component<Props, State> {
             </pre>
           )}
         </div>
-      )
+      );
     }
 
-    return this.props.children
+    return this.props.children;
   }
 }

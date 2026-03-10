@@ -11,17 +11,17 @@ Testology is an IT certification practice exam platform (SSG, no backend, no aut
 
 ## Tech Stack
 
-| Layer        | Tool                                                 |
-|--------------|------------------------------------------------------|
-| Framework    | TanStack Start (`@tanstack/react-start`) — NOT the deprecated `@tanstack/start` |
-| React        | React 19                                             |
-| Router       | TanStack Router (file-based routing, auto-generates `src/routeTree.gen.ts`) |
-| Styling      | Tailwind CSS v4 (CSS `@theme` directives, NOT `tailwind.config.ts`) |
-| Components   | shadcn/ui (uses `@base-ui/react`, NOT Radix — no `asChild` prop) |
-| Bundler      | Vite 7                                               |
-| Package Mgr  | Bun — run `bun --bun run dev`, install with `bun add` |
-| Confetti     | `canvas-confetti`                                    |
-| TypeScript   | Strict mode, `noUnusedLocals`, `noUnusedParameters`  |
+| Layer       | Tool                                                                            |
+| ----------- | ------------------------------------------------------------------------------- |
+| Framework   | TanStack Start (`@tanstack/react-start`) — NOT the deprecated `@tanstack/start` |
+| React       | React 19                                                                        |
+| Router      | TanStack Router (file-based routing, auto-generates `src/routeTree.gen.ts`)     |
+| Styling     | Tailwind CSS v4 (CSS `@theme` directives, NOT `tailwind.config.ts`)             |
+| Components  | shadcn/ui (uses `@base-ui/react`, NOT Radix — no `asChild` prop)                |
+| Bundler     | Vite 7                                                                          |
+| Package Mgr | Bun — run `bun --bun run dev`, install with `bun add`                           |
+| Confetti    | `canvas-confetti`                                                               |
+| TypeScript  | Strict mode, `noUnusedLocals`, `noUnusedParameters`                             |
 
 ---
 
@@ -87,9 +87,9 @@ testolgyAi/
 Both `#/` and `@/` map to `src/`. Convention: **use `#/`**.
 
 ```ts
-import { getCertificates } from '#/utils/data'
-import { Button } from '#/components/ui/button'
-import type { Certificate } from '#/types'
+import { getCertificates } from "#/utils/data";
+import { Button } from "#/components/ui/button";
+import type { Certificate } from "#/types";
 ```
 
 ---
@@ -98,17 +98,17 @@ import type { Certificate } from '#/types'
 
 Available as `bg-testology-navy`, `text-testology-blue`, `border-testology-cyan`, etc.
 
-| Utility class            | Hex       | Usage                    |
-|--------------------------|-----------|--------------------------|
-| `testology-navy`         | `#1A2744` | Dark backgrounds         |
-| `testology-blue`         | `#2563EB` | Primary buttons/links    |
-| `testology-cyan`         | `#00B4FF` | Accent highlights        |
-| `testology-light-blue`   | `#60A5FA` | Secondary accents        |
-| `testology-sky`          | `#E0F2FE` | Light backgrounds        |
-| `testology-slate`        | `#64748B` | Muted text               |
-| `testology-dark`         | `#0F172A` | Primary text             |
-| `testology-success`      | `#16A34A` | Correct answers          |
-| `testology-error`        | `#DC2626` | Wrong answers            |
+| Utility class          | Hex       | Usage                 |
+| ---------------------- | --------- | --------------------- |
+| `testology-navy`       | `#1A2744` | Dark backgrounds      |
+| `testology-blue`       | `#2563EB` | Primary buttons/links |
+| `testology-cyan`       | `#00B4FF` | Accent highlights     |
+| `testology-light-blue` | `#60A5FA` | Secondary accents     |
+| `testology-sky`        | `#E0F2FE` | Light backgrounds     |
+| `testology-slate`      | `#64748B` | Muted text            |
+| `testology-dark`       | `#0F172A` | Primary text          |
+| `testology-success`    | `#16A34A` | Correct answers       |
+| `testology-error`      | `#DC2626` | Wrong answers         |
 
 Also available: shadcn semantic tokens (`bg-primary`, `text-foreground`, `border-border`, `bg-muted`, etc.)
 
@@ -117,29 +117,35 @@ Also available: shadcn semantic tokens (`bg-primary`, `text-foreground`, `border
 ## Key Conventions
 
 ### shadcn Button — No `asChild`
+
 The Button component uses `@base-ui/react`, NOT Radix. There is **no `asChild` prop**. To render a link styled as a button, use `buttonVariants()`:
 
 ```tsx
-import { buttonVariants } from '#/components/ui/button'
+import { buttonVariants } from "#/components/ui/button";
 
-<a href="/path" className={buttonVariants({ size: 'lg' }) + ' no-underline'}>
+<a href="/path" className={buttonVariants({ size: "lg" }) + " no-underline"}>
   Click Me
-</a>
+</a>;
 ```
 
 ### TanStack Router Type-Safe Links
+
 `<Link to="...">` only accepts routes that exist in the route tree. If a route file doesn't exist yet, use `<a href="...">` instead. Convert to `<Link>` once the route file is created.
 
 ### SSG / Prerendering
+
 Configured in `vite.config.ts` via `tanstackStart({ prerender: { enabled: true, crawlLinks: true } })`. All pages are statically generated at build.
 
 ### "All Chapters" Data
+
 The "all" chapter has its own **curated question set** — it is NOT an aggregation of other chapters' questions.
 
 ### Theme System
+
 Light/dark/auto modes stored in localStorage. A blocking `<script>` in `__root.tsx` prevents flash of wrong theme. ThemeToggle cycles: auto → light → dark → auto.
 
 ### Exam Timer Slot
+
 The Header has an empty `<div id="exam-timer-slot" />` reserved for the exam countdown timer (rendered via portal in Step 7).
 
 ---
@@ -147,24 +153,43 @@ The Header has an empty `<div id="exam-timer-slot" />` reserved for the exam cou
 ## Data Types
 
 ```ts
-interface Option { id: string; text: string }
-interface Question { id: string; text: string; options: Option[]; correctAnswer: string; explanation?: string }
-interface Chapter { id: string; title: string; questions: Question[] }
-interface Certificate { id: string; title: string; description: string; logo: string; chapters: string[] }
+interface Option {
+  id: string;
+  text: string;
+}
+interface Question {
+  id: string;
+  text: string;
+  options: Option[];
+  correctAnswer: string;
+  explanation?: string;
+}
+interface Chapter {
+  id: string;
+  title: string;
+  questions: Question[];
+}
+interface Certificate {
+  id: string;
+  title: string;
+  description: string;
+  logo: string;
+  chapters: string[];
+}
 ```
 
 ---
 
 ## Routes (Current & Planned)
 
-| Route | File | Status |
-|-------|------|--------|
-| `/` | `src/routes/index.tsx` | Done |
-| `/certificates` | `src/routes/certificates/index.tsx` | Planned |
-| `/certificates/$certId` | `src/routes/certificates/$certId/index.tsx` | Planned |
-| `/certificates/$certId/chapters/$chapterId/practice` | `...practice.tsx` | Planned |
-| `/certificates/$certId/chapters/$chapterId/exam` | `...exam.tsx` | Planned |
-| `/certificates/$certId/chapters/$chapterId/results` | `...results.tsx` | Planned |
+| Route                                                | File                                        | Status  |
+| ---------------------------------------------------- | ------------------------------------------- | ------- |
+| `/`                                                  | `src/routes/index.tsx`                      | Done    |
+| `/certificates`                                      | `src/routes/certificates/index.tsx`         | Planned |
+| `/certificates/$certId`                              | `src/routes/certificates/$certId/index.tsx` | Planned |
+| `/certificates/$certId/chapters/$chapterId/practice` | `...practice.tsx`                           | Planned |
+| `/certificates/$certId/chapters/$chapterId/exam`     | `...exam.tsx`                               | Planned |
+| `/certificates/$certId/chapters/$chapterId/results`  | `...results.tsx`                            | Planned |
 
 ---
 
@@ -182,6 +207,7 @@ bun run tsc --noEmit    # Type check
 ## WSL Note
 
 This project runs inside WSL (Ubuntu). When running commands from Windows terminal, use:
+
 ```bash
 wsl -e bash -c "export PATH=\$HOME/.bun/bin:\$PATH; cd /home/mamoanwar97/code/testolgyAi && <command>"
 ```

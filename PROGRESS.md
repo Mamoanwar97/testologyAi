@@ -3,6 +3,7 @@
 ## Completed
 
 ### Step 1: Project Setup
+
 - [x] Initialize TanStack Start project (React 19 + Vite 7)
 - [x] Install Bun as package manager
 - [x] Configure TanStack Router (file-based routing)
@@ -14,6 +15,7 @@
 - [x] Verify dev server starts on port 3000
 
 ### Step 2: Static Data & Types
+
 - [x] Create TypeScript types (`src/types.ts`): Certificate, Chapter, Question, Option
 - [x] Create seed JSON data — 3 certificates (AWS CCP, Azure AZ-900, CompTIA A+), each with "All Chapters" + 2 chapters, 5 questions each
   - `src/data/certificates.json`
@@ -24,6 +26,7 @@
 - [x] TypeScript compiles cleanly
 
 ### Step 3: Layout, SEO & Landing Page
+
 - [x] Create root layout (`src/routes/__root.tsx`) with navbar (Za'atar favicon-logo.png as logo, nav links, exam timer slot in top-right)
 - [x] Configure per-route `<title>`, meta descriptions, OpenGraph tags (use `favicon-logo.png` as `og:image`)
 - [x] Set up sitemap generation at build time (custom Vite plugin in `vite.config.ts`)
@@ -36,6 +39,7 @@
 ---
 
 ### Step 4: Certificates Page
+
 - [x] Build responsive card grid (1 col mobile, 2 tablet, 3 desktop)
 - [x] Each card: logo/icon (lucide Award), title, description, chapter count, "Let's Start" button
 - [x] "Let's Start" navigates to `/certificates/$certId`
@@ -46,6 +50,7 @@
 ---
 
 ### Step 5: Chapters Page
+
 - [x] Display certificate info + chapter list with back-link to certificates
 - [x] "All Chapters" card at top with Practice & Exam buttons
 - [x] Individual chapter cards with title, question count, Practice & Exam buttons
@@ -57,6 +62,7 @@
 ---
 
 ### Step 6: Practice Mode
+
 - [x] All questions on a single scrollable page, no timer
 - [x] Instant feedback on answer selection (green checkmark / red X + explanation)
 - [x] Submit button at bottom → stores answers in localStorage, navigates to results (`?mode=practice`)
@@ -68,6 +74,7 @@
 ---
 
 ### Step 7: Exam Mode
+
 - [x] All questions on a single scrollable page
 - [x] 60-minute countdown timer in navbar top-right (portal into `#exam-timer-slot`)
 - [x] No feedback until submit (ExamQuestionCard shows selection only)
@@ -83,6 +90,7 @@
 ---
 
 ### Step 8: Exit Confirmation
+
 - [x] `beforeunload` handler for browser close/refresh (via `enableBeforeUnload` in useBlocker)
 - [x] TanStack Router navigation blocker for in-app navigation (`useBlocker` with `withResolver`)
 - [x] Confirmation modal: "Are you sure you want to leave? Your progress will be lost."
@@ -93,6 +101,7 @@
 ---
 
 ### Step 9: Results Page
+
 - [x] Shared results route with `?mode=exam|practice` query parameter
 - [x] Redirect to chapters page if no data in localStorage
 - [x] **Exam results** (`?mode=exam`):
@@ -113,6 +122,7 @@
 ---
 
 ### Step 10: Polish & Responsiveness
+
 - [x] Mobile responsiveness across all pages
   - Responsive score circle (h-28 → h-36), responsive padding on question cards (p-4 → p-6), responsive timer sizing
   - Hidden "Testology" text on mobile (logo only), responsive font sizes

@@ -8,7 +8,10 @@
         "text": "What is Azure Resource Manager (ARM)?",
         "options": [
           { "id": "a", "text": "A billing management tool" },
-          { "id": "b", "text": "The deployment and management service for Azure that provides a consistent management layer" },
+          {
+            "id": "b",
+            "text": "The deployment and management service for Azure that provides a consistent management layer"
+          },
           { "id": "c", "text": "A virtual machine type" },
           { "id": "d", "text": "A networking protocol" }
         ],
@@ -32,7 +35,10 @@
         "text": "What is an Azure Availability Zone?",
         "options": [
           { "id": "a", "text": "A pricing tier for Azure services" },
-          { "id": "b", "text": "A unique physical location within an Azure region with independent power, cooling, and networking" },
+          {
+            "id": "b",
+            "text": "A unique physical location within an Azure region with independent power, cooling, and networking"
+          },
           { "id": "c", "text": "A type of Azure subscription" },
           { "id": "d", "text": "A DNS management service" }
         ],
@@ -74,7 +80,10 @@
         "text": "What does 'high availability' mean in cloud computing?",
         "options": [
           { "id": "a", "text": "Services are always free of charge" },
-          { "id": "b", "text": "Systems are designed to remain operational with minimal downtime" },
+          {
+            "id": "b",
+            "text": "Systems are designed to remain operational with minimal downtime"
+          },
           { "id": "c", "text": "Data is stored in a single location" },
           { "id": "d", "text": "Applications run only during business hours" }
         ],
@@ -85,8 +94,14 @@
         "id": "cc-q2",
         "text": "What is the consumption-based model in cloud computing?",
         "options": [
-          { "id": "a", "text": "Paying a fixed monthly fee regardless of usage" },
-          { "id": "b", "text": "Paying only for the resources you actually use" },
+          {
+            "id": "a",
+            "text": "Paying a fixed monthly fee regardless of usage"
+          },
+          {
+            "id": "b",
+            "text": "Paying only for the resources you actually use"
+          },
           { "id": "c", "text": "Buying hardware upfront" },
           { "id": "d", "text": "Free unlimited usage" }
         ],
@@ -110,7 +125,10 @@
         "text": "What is scalability in cloud computing?",
         "options": [
           { "id": "a", "text": "The ability to recover from failures" },
-          { "id": "b", "text": "The ability to increase or decrease resources to meet demand" },
+          {
+            "id": "b",
+            "text": "The ability to increase or decrease resources to meet demand"
+          },
           { "id": "c", "text": "The speed of data transfer" },
           { "id": "d", "text": "The geographic distribution of data centers" }
         ],
@@ -122,7 +140,10 @@
         "text": "What is a Service Level Agreement (SLA)?",
         "options": [
           { "id": "a", "text": "A software license" },
-          { "id": "b", "text": "A formal agreement between a service provider and customer defining performance standards" },
+          {
+            "id": "b",
+            "text": "A formal agreement between a service provider and customer defining performance standards"
+          },
           { "id": "c", "text": "A type of Azure subscription" },
           { "id": "d", "text": "A programming framework" }
         ],
@@ -140,7 +161,10 @@
         "text": "What is Azure Blob Storage used for?",
         "options": [
           { "id": "a", "text": "Running virtual machines" },
-          { "id": "b", "text": "Storing large amounts of unstructured data like text or binary data" },
+          {
+            "id": "b",
+            "text": "Storing large amounts of unstructured data like text or binary data"
+          },
           { "id": "c", "text": "Managing DNS records" },
           { "id": "d", "text": "Sending email notifications" }
         ],
@@ -164,7 +188,10 @@
         "text": "What does Azure Virtual Network (VNet) enable?",
         "options": [
           { "id": "a", "text": "Running serverless functions" },
-          { "id": "b", "text": "Secure communication between Azure resources, the internet, and on-premises networks" },
+          {
+            "id": "b",
+            "text": "Secure communication between Azure resources, the internet, and on-premises networks"
+          },
           { "id": "c", "text": "Storing files in the cloud" },
           { "id": "d", "text": "Monitoring application performance" }
         ],
@@ -176,7 +203,10 @@
         "text": "What is Azure Cosmos DB?",
         "options": [
           { "id": "a", "text": "A relational database service" },
-          { "id": "b", "text": "A globally distributed, multi-model NoSQL database service" },
+          {
+            "id": "b",
+            "text": "A globally distributed, multi-model NoSQL database service"
+          },
           { "id": "c", "text": "A file storage service" },
           { "id": "d", "text": "A compute service" }
         ],

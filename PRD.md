@@ -16,41 +16,41 @@ The app is statically generated (SSG) at build time and deployed to GitHub Pages
 
 #### Character Assets
 
-| Asset              | File                | Usage                                                      |
-|--------------------|---------------------|------------------------------------------------------------|
-| Favicon / Logo     | `favicon-logo.png`  | Browser tab favicon, navbar logo, OpenGraph image          |
-| Half-body (waving) | `halfRobot.png`     | Landing page hero, empty states, encouragement moments     |
-| Full-body (tablet) | `robot.png`         | Certificates page, results page, onboarding illustrations  |
+| Asset              | File               | Usage                                                     |
+| ------------------ | ------------------ | --------------------------------------------------------- |
+| Favicon / Logo     | `favicon-logo.png` | Browser tab favicon, navbar logo, OpenGraph image         |
+| Half-body (waving) | `halfRobot.png`    | Landing page hero, empty states, encouragement moments    |
+| Full-body (tablet) | `robot.png`        | Certificates page, results page, onboarding illustrations |
 
 #### Za'atar's Appearances
 
-| Page / Context               | Asset Used       | Role                                                        |
-|------------------------------|------------------|-------------------------------------------------------------|
-| **Landing page hero**        | `halfRobot.png`  | Waving hello, welcoming users to the platform               |
-| **Navbar logo**              | `favicon-logo.png` | Persistent brand presence in the navigation bar            |
-| **Certificates page**        | `robot.png`      | Standing beside the certificate grid, holding a tablet      |
-| **Empty states**             | `halfRobot.png`  | Friendly "no questions yet" or "nothing here" illustration  |
-| **Exam results (pass)**      | `halfRobot.png`  | Celebrating with the user alongside confetti                |
-| **Exam results (fail)**      | `halfRobot.png`  | Encouraging "keep practicing!" companion                    |
-| **Error boundary / 404**     | `halfRobot.png`  | Apologetic "oops, something went wrong" illustration        |
+| Page / Context           | Asset Used         | Role                                                       |
+| ------------------------ | ------------------ | ---------------------------------------------------------- |
+| **Landing page hero**    | `halfRobot.png`    | Waving hello, welcoming users to the platform              |
+| **Navbar logo**          | `favicon-logo.png` | Persistent brand presence in the navigation bar            |
+| **Certificates page**    | `robot.png`        | Standing beside the certificate grid, holding a tablet     |
+| **Empty states**         | `halfRobot.png`    | Friendly "no questions yet" or "nothing here" illustration |
+| **Exam results (pass)**  | `halfRobot.png`    | Celebrating with the user alongside confetti               |
+| **Exam results (fail)**  | `halfRobot.png`    | Encouraging "keep practicing!" companion                   |
+| **Error boundary / 404** | `halfRobot.png`    | Apologetic "oops, something went wrong" illustration       |
 
 ### Color Palette
 
 Derived from the Za'atar robot character assets — a modern blue-and-white tech palette:
 
-| Token              | Hex       | Usage                                                      |
-|--------------------|-----------|------------------------------------------------------------|
-| **Navy (Primary)** | `#1A2744` | Dark backgrounds, navbar, footer, robot visor/screen       |
-| **Blue (Brand)**   | `#2563EB` | Primary buttons, links, active states, brand accent        |
-| **Cyan (Accent)**  | `#00B4FF` | Glowing highlights, hover states, Za'atar's eye glow       |
-| **Light Blue**     | `#60A5FA` | Secondary buttons, tags, lighter accents                   |
-| **Sky**            | `#E0F2FE` | Light card backgrounds, highlight areas                    |
-| **White**          | `#FFFFFF` | Page backgrounds, card surfaces, robot body                |
-| **Light Gray**     | `#F1F5F9` | Alternate section backgrounds, input fields                |
-| **Slate**          | `#64748B` | Secondary text, descriptions, muted elements               |
-| **Dark Text**      | `#0F172A` | Primary text, headings                                     |
-| **Success**        | `#16A34A` | Correct answers (green with checkmark)                     |
-| **Error**          | `#DC2626` | Incorrect answers (red with X icon)                        |
+| Token              | Hex       | Usage                                                |
+| ------------------ | --------- | ---------------------------------------------------- |
+| **Navy (Primary)** | `#1A2744` | Dark backgrounds, navbar, footer, robot visor/screen |
+| **Blue (Brand)**   | `#2563EB` | Primary buttons, links, active states, brand accent  |
+| **Cyan (Accent)**  | `#00B4FF` | Glowing highlights, hover states, Za'atar's eye glow |
+| **Light Blue**     | `#60A5FA` | Secondary buttons, tags, lighter accents             |
+| **Sky**            | `#E0F2FE` | Light card backgrounds, highlight areas              |
+| **White**          | `#FFFFFF` | Page backgrounds, card surfaces, robot body          |
+| **Light Gray**     | `#F1F5F9` | Alternate section backgrounds, input fields          |
+| **Slate**          | `#64748B` | Secondary text, descriptions, muted elements         |
+| **Dark Text**      | `#0F172A` | Primary text, headings                               |
+| **Success**        | `#16A34A` | Correct answers (green with checkmark)               |
+| **Error**          | `#DC2626` | Incorrect answers (red with X icon)                  |
 
 #### Tailwind CSS Configuration
 
@@ -73,33 +73,33 @@ testology: {
 
 ## Tech Stack
 
-| Layer           | Choice                                      |
-|-----------------|---------------------------------------------|
-| Language        | TypeScript (strict mode)                    |
-| Framework       | TanStack Start (SSG via Nitro static preset) |
-| UI Library      | shadcn/ui                                   |
-| Styling         | Tailwind CSS                                |
-| Data            | Static JSON files                           |
+| Layer           | Choice                                                       |
+| --------------- | ------------------------------------------------------------ |
+| Language        | TypeScript (strict mode)                                     |
+| Framework       | TanStack Start (SSG via Nitro static preset)                 |
+| UI Library      | shadcn/ui                                                    |
+| Styling         | Tailwind CSS                                                 |
+| Data            | Static JSON files                                            |
 | State           | TanStack Router + React state (localStorage for persistence) |
-| Animations      | CSS animations / canvas-confetti for celebration |
-| Package Manager | Bun                                         |
-| Linting         | ESLint                                      |
-| Formatting      | Prettier                                    |
-| Deployment      | GitHub Pages                                |
+| Animations      | CSS animations / canvas-confetti for celebration             |
+| Package Manager | Bun                                                          |
+| Linting         | ESLint                                                       |
+| Formatting      | Prettier                                                     |
+| Deployment      | GitHub Pages                                                 |
 
 ---
 
 ## Pages & Routes
 
-| Route                                                      | Page          |
-|------------------------------------------------------------|---------------|
-| `/`                                                        | Landing Page  |
-| `/certificates`                                            | Certificates  |
-| `/certificates/$certId`                                    | Chapters      |
-| `/certificates/$certId/chapters/$chapterId/practice`       | Practice Mode |
-| `/certificates/$certId/chapters/$chapterId/exam`           | Exam Mode     |
-| `/certificates/$certId/chapters/all/practice`              | Practice All  |
-| `/certificates/$certId/chapters/all/exam`                  | Exam All      |
+| Route                                                                   | Page          |
+| ----------------------------------------------------------------------- | ------------- |
+| `/`                                                                     | Landing Page  |
+| `/certificates`                                                         | Certificates  |
+| `/certificates/$certId`                                                 | Chapters      |
+| `/certificates/$certId/chapters/$chapterId/practice`                    | Practice Mode |
+| `/certificates/$certId/chapters/$chapterId/exam`                        | Exam Mode     |
+| `/certificates/$certId/chapters/all/practice`                           | Practice All  |
+| `/certificates/$certId/chapters/all/exam`                               | Exam All      |
 | `/certificates/$certId/chapters/$chapterId/results?mode=practice\|exam` | Results Page  |
 
 ---
@@ -227,6 +227,7 @@ The results page serves both practice and exam modes, differentiated by the `mod
 ## Data Model (Static JSON)
 
 ### `certificates.json`
+
 ```json
 [
   {
@@ -288,28 +289,29 @@ The results page serves both practice and exam modes, differentiated by the `mod
 
 ## Key UX Behaviors
 
-| Behavior                       | Implementation                                                                 |
-|--------------------------------|--------------------------------------------------------------------------------|
-| Answer persistence (exam)      | `localStorage` keyed by `certId + chapterId + mode`; save on every answer change |
-| Timer persistence              | Save remaining seconds to `localStorage`; restore on refresh                    |
-| Resume/restart prompt          | When navigating to exam with existing saved data, prompt user to resume or start new |
-| Exit confirmation (browser)    | `window.beforeunload` event as soft guard; data persists via localStorage     |
-| Exit confirmation (in-app)     | TanStack Router navigation blocker with custom modal; clears exam data on confirm |
-| Submit review modal            | Modal showing answered/unanswered count with confirm or go back options        |
-| Auto-submit on timer expiry    | "Time's up!" modal (3 seconds, non-dismissable) → auto-navigate to results    |
-| Celebration animation          | `canvas-confetti` npm package on exam results page when score >= 80%          |
-| Exam shuffling                 | Shuffle both question order and answer choice order on every new exam attempt  |
-| 404 / Invalid routes           | Validate `certId` and `chapterId` in route loaders; redirect to `/certificates` if not found |
-| Results without data           | Redirect to chapters page if no practice/exam data exists in localStorage     |
-| localStorage cleanup           | "Try Again" clears stored data; new exam attempt from chapters clears if user chooses "Start New" |
-| Loading states                 | Skeleton UI on quiz pages during hydration; static pages render instantly      |
-| Error handling                 | Global error boundary with Za'atar illustration + friendly message + link to home; empty question sets show Za'atar with "No questions available yet" state |
+| Behavior                    | Implementation                                                                                                                                              |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Answer persistence (exam)   | `localStorage` keyed by `certId + chapterId + mode`; save on every answer change                                                                            |
+| Timer persistence           | Save remaining seconds to `localStorage`; restore on refresh                                                                                                |
+| Resume/restart prompt       | When navigating to exam with existing saved data, prompt user to resume or start new                                                                        |
+| Exit confirmation (browser) | `window.beforeunload` event as soft guard; data persists via localStorage                                                                                   |
+| Exit confirmation (in-app)  | TanStack Router navigation blocker with custom modal; clears exam data on confirm                                                                           |
+| Submit review modal         | Modal showing answered/unanswered count with confirm or go back options                                                                                     |
+| Auto-submit on timer expiry | "Time's up!" modal (3 seconds, non-dismissable) → auto-navigate to results                                                                                  |
+| Celebration animation       | `canvas-confetti` npm package on exam results page when score >= 80%                                                                                        |
+| Exam shuffling              | Shuffle both question order and answer choice order on every new exam attempt                                                                               |
+| 404 / Invalid routes        | Validate `certId` and `chapterId` in route loaders; redirect to `/certificates` if not found                                                                |
+| Results without data        | Redirect to chapters page if no practice/exam data exists in localStorage                                                                                   |
+| localStorage cleanup        | "Try Again" clears stored data; new exam attempt from chapters clears if user chooses "Start New"                                                           |
+| Loading states              | Skeleton UI on quiz pages during hydration; static pages render instantly                                                                                   |
+| Error handling              | Global error boundary with Za'atar illustration + friendly message + link to home; empty question sets show Za'atar with "No questions available yet" state |
 
 ---
 
 ## Implementation Plan
 
 ### Step 1: Project Setup
+
 - Initialize TanStack Start project with Vite
 - Configure Nitro for static site generation (GitHub Pages preset)
 - Install dependencies: Tailwind CSS, shadcn/ui, canvas-confetti
@@ -320,6 +322,7 @@ The results page serves both practice and exam modes, differentiated by the `mod
 - **Files**: `package.json`, `vite.config.ts`, `app.config.ts`, `tailwind.config.ts`, `components.json`
 
 ### Step 2: Static Data & Types
+
 - Create TypeScript types for Certificate, Chapter, Question
 - Create sample JSON data files (1 certificate, 2-3 chapters, ~10 questions each as seed data)
 - Create data utility functions to load and query the JSON
@@ -327,6 +330,7 @@ The results page serves both practice and exam modes, differentiated by the `mod
 - **Files**: `src/data/certificates.json`, `src/data/chapters/`, `src/types.ts`, `src/utils/data.ts`
 
 ### Step 3: Layout, SEO & Landing Page
+
 - Create root layout with navigation bar (**Za'atar favicon-logo.png** as navbar logo, nav links, exam timer slot in top-right)
 - Configure head management for per-route `<title>`, meta descriptions, and OpenGraph tags (use `favicon-logo.png` as `og:image`)
 - Set up sitemap generation at build time
@@ -335,18 +339,21 @@ The results page serves both practice and exam modes, differentiated by the `mod
 - **Files**: `src/routes/__root.tsx`, `src/routes/index.tsx`, `src/components/ErrorBoundary.tsx`
 
 ### Step 4: Certificates Page
+
 - Build responsive card grid
 - Each card pulls from static JSON
 - "Let's Start" links to chapters page
 - **Files**: `src/routes/certificates/index.tsx`, `src/components/CertificateCard.tsx`
 
 ### Step 5: Chapters Page
+
 - Display certificate info + chapter list
 - "All Chapters" card at top
 - Each chapter card with Practice / Exam buttons
 - **Files**: `src/routes/certificates/$certId/index.tsx`, `src/components/ChapterCard.tsx`
 
 ### Step 6: Practice Mode
+
 - All questions on a single scrollable page
 - Instant feedback on answer selection (green/red highlighting with icons + explanation)
 - Submit button at bottom → navigates to results (`?mode=practice`)
@@ -354,6 +361,7 @@ The results page serves both practice and exam modes, differentiated by the `mod
 - **Files**: `src/routes/certificates/$certId/chapters/$chapterId/practice.tsx`, `src/components/QuestionCard.tsx`
 
 ### Step 7: Exam Mode
+
 - All questions on a single scrollable page with answer selection
 - 60-minute countdown timer in navbar (top-right)
 - localStorage persistence for answers + timer
@@ -365,12 +373,14 @@ The results page serves both practice and exam modes, differentiated by the `mod
 - **Files**: `src/routes/certificates/$certId/chapters/$chapterId/exam.tsx`, `src/components/ExamQuestionCard.tsx`, `src/components/Timer.tsx`, `src/hooks/useExamState.ts`
 
 ### Step 8: Exit Confirmation
+
 - `beforeunload` handler for browser close/refresh
 - TanStack Router navigation blocker for in-app navigation
 - Confirmation modal component
 - **Files**: `src/hooks/useExitConfirmation.ts`, `src/components/ConfirmModal.tsx`
 
 ### Step 9: Results Page
+
 - Shared results route with `?mode=exam|practice` query parameter
 - Exam results: score with pass/fail, wrong answers review, canvas-confetti on >= 80%
 - Practice results: score summary only (no wrong answers, no confetti)
@@ -379,6 +389,7 @@ The results page serves both practice and exam modes, differentiated by the `mod
 - **Files**: `src/routes/certificates/$certId/chapters/$chapterId/results.tsx`, `src/components/ResultsSummary.tsx`, `src/components/WrongAnswerReview.tsx`
 
 ### Step 10: Polish & Responsiveness
+
 - Ensure mobile responsiveness across all pages
 - Verify accessibility: keyboard navigation, focus management, ARIA live regions, icon+text feedback
 - Verify localStorage behavior (cleanup on new attempt, resume prompt)

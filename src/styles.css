@@ -12,37 +12,37 @@
 /* Testology Brand Color Palette */
 :root {
   /* Brand colors */
-  --testology-navy: #1A2744;
-  --testology-blue: #2563EB;
-  --testology-cyan: #00B4FF;
-  --testology-light-blue: #60A5FA;
-  --testology-sky: #E0F2FE;
-  --testology-slate: #64748B;
-  --testology-dark: #0F172A;
-  --testology-success: #16A34A;
-  --testology-error: #DC2626;
+  --testology-navy: #1a2744;
+  --testology-blue: #2563eb;
+  --testology-cyan: #00b4ff;
+  --testology-light-blue: #60a5fa;
+  --testology-sky: #e0f2fe;
+  --testology-slate: #64748b;
+  --testology-dark: #0f172a;
+  --testology-success: #16a34a;
+  --testology-error: #dc2626;
 
   /* shadcn/ui semantic tokens — Testology themed */
-  --background: #FFFFFF;
-  --foreground: #0F172A;
-  --card: #FFFFFF;
-  --card-foreground: #0F172A;
-  --popover: #FFFFFF;
-  --popover-foreground: #0F172A;
-  --primary: #2563EB;
-  --primary-foreground: #FFFFFF;
-  --secondary: #E0F2FE;
-  --secondary-foreground: #1A2744;
-  --muted: #F1F5F9;
-  --muted-foreground: #64748B;
-  --accent: #E0F2FE;
-  --accent-foreground: #1A2744;
-  --destructive: #DC2626;
-  --border: #E2E8F0;
-  --input: #E2E8F0;
-  --ring: #2563EB;
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #e0f2fe;
+  --secondary-foreground: #1a2744;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #e0f2fe;
+  --accent-foreground: #1a2744;
+  --destructive: #dc2626;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #2563eb;
   --radius: 0.625rem;
-  --success: #16A34A;
+  --success: #16a34a;
 }
 
 * {
@@ -59,15 +59,15 @@ body,
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
   /* Testology brand colors for Tailwind utilities */
-  --color-testology-navy: #1A2744;
-  --color-testology-blue: #2563EB;
-  --color-testology-cyan: #00B4FF;
-  --color-testology-light-blue: #60A5FA;
-  --color-testology-sky: #E0F2FE;
-  --color-testology-slate: #64748B;
-  --color-testology-dark: #0F172A;
-  --color-testology-success: #16A34A;
-  --color-testology-error: #DC2626;
+  --color-testology-navy: #1a2744;
+  --color-testology-blue: #2563eb;
+  --color-testology-cyan: #00b4ff;
+  --color-testology-light-blue: #60a5fa;
+  --color-testology-sky: #e0f2fe;
+  --color-testology-slate: #64748b;
+  --color-testology-dark: #0f172a;
+  --color-testology-success: #16a34a;
+  --color-testology-error: #dc2626;
 
   /* shadcn/ui theme mapping */
   --color-ring: var(--ring);

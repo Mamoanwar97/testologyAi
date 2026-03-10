@@ -8,173 +8,173 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as SplatRouteImport } from './routes/$'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as CertificatesIndexRouteImport } from './routes/certificates/index'
-import { Route as CertificatesCertIdIndexRouteImport } from './routes/certificates/$certId/index'
-import { Route as CertificatesCertIdChaptersChapterIdResultsRouteImport } from './routes/certificates/$certId/chapters/$chapterId/results'
-import { Route as CertificatesCertIdChaptersChapterIdPracticeRouteImport } from './routes/certificates/$certId/chapters/$chapterId/practice'
-import { Route as CertificatesCertIdChaptersChapterIdExamRouteImport } from './routes/certificates/$certId/chapters/$chapterId/exam'
+import { Route as rootRouteImport } from "./routes/__root";
+import { Route as SplatRouteImport } from "./routes/$";
+import { Route as IndexRouteImport } from "./routes/index";
+import { Route as CertificatesIndexRouteImport } from "./routes/certificates/index";
+import { Route as CertificatesCertIdIndexRouteImport } from "./routes/certificates/$certId/index";
+import { Route as CertificatesCertIdChaptersChapterIdResultsRouteImport } from "./routes/certificates/$certId/chapters/$chapterId/results";
+import { Route as CertificatesCertIdChaptersChapterIdPracticeRouteImport } from "./routes/certificates/$certId/chapters/$chapterId/practice";
+import { Route as CertificatesCertIdChaptersChapterIdExamRouteImport } from "./routes/certificates/$certId/chapters/$chapterId/exam";
 
 const SplatRoute = SplatRouteImport.update({
-  id: '/$',
-  path: '/$',
+  id: "/$",
+  path: "/$",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+  id: "/",
+  path: "/",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const CertificatesIndexRoute = CertificatesIndexRouteImport.update({
-  id: '/certificates/',
-  path: '/certificates/',
+  id: "/certificates/",
+  path: "/certificates/",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const CertificatesCertIdIndexRoute = CertificatesCertIdIndexRouteImport.update({
-  id: '/certificates/$certId/',
-  path: '/certificates/$certId/',
+  id: "/certificates/$certId/",
+  path: "/certificates/$certId/",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const CertificatesCertIdChaptersChapterIdResultsRoute =
   CertificatesCertIdChaptersChapterIdResultsRouteImport.update({
-    id: '/certificates/$certId/chapters/$chapterId/results',
-    path: '/certificates/$certId/chapters/$chapterId/results',
+    id: "/certificates/$certId/chapters/$chapterId/results",
+    path: "/certificates/$certId/chapters/$chapterId/results",
     getParentRoute: () => rootRouteImport,
-  } as any)
+  } as any);
 const CertificatesCertIdChaptersChapterIdPracticeRoute =
   CertificatesCertIdChaptersChapterIdPracticeRouteImport.update({
-    id: '/certificates/$certId/chapters/$chapterId/practice',
-    path: '/certificates/$certId/chapters/$chapterId/practice',
+    id: "/certificates/$certId/chapters/$chapterId/practice",
+    path: "/certificates/$certId/chapters/$chapterId/practice",
     getParentRoute: () => rootRouteImport,
-  } as any)
+  } as any);
 const CertificatesCertIdChaptersChapterIdExamRoute =
   CertificatesCertIdChaptersChapterIdExamRouteImport.update({
-    id: '/certificates/$certId/chapters/$chapterId/exam',
-    path: '/certificates/$certId/chapters/$chapterId/exam',
+    id: "/certificates/$certId/chapters/$chapterId/exam",
+    path: "/certificates/$certId/chapters/$chapterId/exam",
     getParentRoute: () => rootRouteImport,
-  } as any)
+  } as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/$': typeof SplatRoute
-  '/certificates/': typeof CertificatesIndexRoute
-  '/certificates/$certId/': typeof CertificatesCertIdIndexRoute
-  '/certificates/$certId/chapters/$chapterId/exam': typeof CertificatesCertIdChaptersChapterIdExamRoute
-  '/certificates/$certId/chapters/$chapterId/practice': typeof CertificatesCertIdChaptersChapterIdPracticeRoute
-  '/certificates/$certId/chapters/$chapterId/results': typeof CertificatesCertIdChaptersChapterIdResultsRoute
+  "/": typeof IndexRoute;
+  "/$": typeof SplatRoute;
+  "/certificates/": typeof CertificatesIndexRoute;
+  "/certificates/$certId/": typeof CertificatesCertIdIndexRoute;
+  "/certificates/$certId/chapters/$chapterId/exam": typeof CertificatesCertIdChaptersChapterIdExamRoute;
+  "/certificates/$certId/chapters/$chapterId/practice": typeof CertificatesCertIdChaptersChapterIdPracticeRoute;
+  "/certificates/$certId/chapters/$chapterId/results": typeof CertificatesCertIdChaptersChapterIdResultsRoute;
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/$': typeof SplatRoute
-  '/certificates': typeof CertificatesIndexRoute
-  '/certificates/$certId': typeof CertificatesCertIdIndexRoute
-  '/certificates/$certId/chapters/$chapterId/exam': typeof CertificatesCertIdChaptersChapterIdExamRoute
-  '/certificates/$certId/chapters/$chapterId/practice': typeof CertificatesCertIdChaptersChapterIdPracticeRoute
-  '/certificates/$certId/chapters/$chapterId/results': typeof CertificatesCertIdChaptersChapterIdResultsRoute
+  "/": typeof IndexRoute;
+  "/$": typeof SplatRoute;
+  "/certificates": typeof CertificatesIndexRoute;
+  "/certificates/$certId": typeof CertificatesCertIdIndexRoute;
+  "/certificates/$certId/chapters/$chapterId/exam": typeof CertificatesCertIdChaptersChapterIdExamRoute;
+  "/certificates/$certId/chapters/$chapterId/practice": typeof CertificatesCertIdChaptersChapterIdPracticeRoute;
+  "/certificates/$certId/chapters/$chapterId/results": typeof CertificatesCertIdChaptersChapterIdResultsRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/$': typeof SplatRoute
-  '/certificates/': typeof CertificatesIndexRoute
-  '/certificates/$certId/': typeof CertificatesCertIdIndexRoute
-  '/certificates/$certId/chapters/$chapterId/exam': typeof CertificatesCertIdChaptersChapterIdExamRoute
-  '/certificates/$certId/chapters/$chapterId/practice': typeof CertificatesCertIdChaptersChapterIdPracticeRoute
-  '/certificates/$certId/chapters/$chapterId/results': typeof CertificatesCertIdChaptersChapterIdResultsRoute
+  __root__: typeof rootRouteImport;
+  "/": typeof IndexRoute;
+  "/$": typeof SplatRoute;
+  "/certificates/": typeof CertificatesIndexRoute;
+  "/certificates/$certId/": typeof CertificatesCertIdIndexRoute;
+  "/certificates/$certId/chapters/$chapterId/exam": typeof CertificatesCertIdChaptersChapterIdExamRoute;
+  "/certificates/$certId/chapters/$chapterId/practice": typeof CertificatesCertIdChaptersChapterIdPracticeRoute;
+  "/certificates/$certId/chapters/$chapterId/results": typeof CertificatesCertIdChaptersChapterIdResultsRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
+  fileRoutesByFullPath: FileRoutesByFullPath;
   fullPaths:
-    | '/'
-    | '/$'
-    | '/certificates/'
-    | '/certificates/$certId/'
-    | '/certificates/$certId/chapters/$chapterId/exam'
-    | '/certificates/$certId/chapters/$chapterId/practice'
-    | '/certificates/$certId/chapters/$chapterId/results'
-  fileRoutesByTo: FileRoutesByTo
+    | "/"
+    | "/$"
+    | "/certificates/"
+    | "/certificates/$certId/"
+    | "/certificates/$certId/chapters/$chapterId/exam"
+    | "/certificates/$certId/chapters/$chapterId/practice"
+    | "/certificates/$certId/chapters/$chapterId/results";
+  fileRoutesByTo: FileRoutesByTo;
   to:
-    | '/'
-    | '/$'
-    | '/certificates'
-    | '/certificates/$certId'
-    | '/certificates/$certId/chapters/$chapterId/exam'
-    | '/certificates/$certId/chapters/$chapterId/practice'
-    | '/certificates/$certId/chapters/$chapterId/results'
+    | "/"
+    | "/$"
+    | "/certificates"
+    | "/certificates/$certId"
+    | "/certificates/$certId/chapters/$chapterId/exam"
+    | "/certificates/$certId/chapters/$chapterId/practice"
+    | "/certificates/$certId/chapters/$chapterId/results";
   id:
-    | '__root__'
-    | '/'
-    | '/$'
-    | '/certificates/'
-    | '/certificates/$certId/'
-    | '/certificates/$certId/chapters/$chapterId/exam'
-    | '/certificates/$certId/chapters/$chapterId/practice'
-    | '/certificates/$certId/chapters/$chapterId/results'
-  fileRoutesById: FileRoutesById
+    | "__root__"
+    | "/"
+    | "/$"
+    | "/certificates/"
+    | "/certificates/$certId/"
+    | "/certificates/$certId/chapters/$chapterId/exam"
+    | "/certificates/$certId/chapters/$chapterId/practice"
+    | "/certificates/$certId/chapters/$chapterId/results";
+  fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  SplatRoute: typeof SplatRoute
-  CertificatesIndexRoute: typeof CertificatesIndexRoute
-  CertificatesCertIdIndexRoute: typeof CertificatesCertIdIndexRoute
-  CertificatesCertIdChaptersChapterIdExamRoute: typeof CertificatesCertIdChaptersChapterIdExamRoute
-  CertificatesCertIdChaptersChapterIdPracticeRoute: typeof CertificatesCertIdChaptersChapterIdPracticeRoute
-  CertificatesCertIdChaptersChapterIdResultsRoute: typeof CertificatesCertIdChaptersChapterIdResultsRoute
+  IndexRoute: typeof IndexRoute;
+  SplatRoute: typeof SplatRoute;
+  CertificatesIndexRoute: typeof CertificatesIndexRoute;
+  CertificatesCertIdIndexRoute: typeof CertificatesCertIdIndexRoute;
+  CertificatesCertIdChaptersChapterIdExamRoute: typeof CertificatesCertIdChaptersChapterIdExamRoute;
+  CertificatesCertIdChaptersChapterIdPracticeRoute: typeof CertificatesCertIdChaptersChapterIdPracticeRoute;
+  CertificatesCertIdChaptersChapterIdResultsRoute: typeof CertificatesCertIdChaptersChapterIdResultsRoute;
 }
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    '/$': {
-      id: '/$'
-      path: '/$'
-      fullPath: '/$'
-      preLoaderRoute: typeof SplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/certificates/': {
-      id: '/certificates/'
-      path: '/certificates'
-      fullPath: '/certificates/'
-      preLoaderRoute: typeof CertificatesIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/certificates/$certId/': {
-      id: '/certificates/$certId/'
-      path: '/certificates/$certId'
-      fullPath: '/certificates/$certId/'
-      preLoaderRoute: typeof CertificatesCertIdIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/certificates/$certId/chapters/$chapterId/results': {
-      id: '/certificates/$certId/chapters/$chapterId/results'
-      path: '/certificates/$certId/chapters/$chapterId/results'
-      fullPath: '/certificates/$certId/chapters/$chapterId/results'
-      preLoaderRoute: typeof CertificatesCertIdChaptersChapterIdResultsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/certificates/$certId/chapters/$chapterId/practice': {
-      id: '/certificates/$certId/chapters/$chapterId/practice'
-      path: '/certificates/$certId/chapters/$chapterId/practice'
-      fullPath: '/certificates/$certId/chapters/$chapterId/practice'
-      preLoaderRoute: typeof CertificatesCertIdChaptersChapterIdPracticeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/certificates/$certId/chapters/$chapterId/exam': {
-      id: '/certificates/$certId/chapters/$chapterId/exam'
-      path: '/certificates/$certId/chapters/$chapterId/exam'
-      fullPath: '/certificates/$certId/chapters/$chapterId/exam'
-      preLoaderRoute: typeof CertificatesCertIdChaptersChapterIdExamRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+    "/$": {
+      id: "/$";
+      path: "/$";
+      fullPath: "/$";
+      preLoaderRoute: typeof SplatRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/": {
+      id: "/";
+      path: "/";
+      fullPath: "/";
+      preLoaderRoute: typeof IndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/certificates/": {
+      id: "/certificates/";
+      path: "/certificates";
+      fullPath: "/certificates/";
+      preLoaderRoute: typeof CertificatesIndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/certificates/$certId/": {
+      id: "/certificates/$certId/";
+      path: "/certificates/$certId";
+      fullPath: "/certificates/$certId/";
+      preLoaderRoute: typeof CertificatesCertIdIndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/certificates/$certId/chapters/$chapterId/results": {
+      id: "/certificates/$certId/chapters/$chapterId/results";
+      path: "/certificates/$certId/chapters/$chapterId/results";
+      fullPath: "/certificates/$certId/chapters/$chapterId/results";
+      preLoaderRoute: typeof CertificatesCertIdChaptersChapterIdResultsRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/certificates/$certId/chapters/$chapterId/practice": {
+      id: "/certificates/$certId/chapters/$chapterId/practice";
+      path: "/certificates/$certId/chapters/$chapterId/practice";
+      fullPath: "/certificates/$certId/chapters/$chapterId/practice";
+      preLoaderRoute: typeof CertificatesCertIdChaptersChapterIdPracticeRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/certificates/$certId/chapters/$chapterId/exam": {
+      id: "/certificates/$certId/chapters/$chapterId/exam";
+      path: "/certificates/$certId/chapters/$chapterId/exam";
+      fullPath: "/certificates/$certId/chapters/$chapterId/exam";
+      preLoaderRoute: typeof CertificatesCertIdChaptersChapterIdExamRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
   }
 }
 
@@ -189,16 +189,16 @@ const rootRouteChildren: RootRouteChildren = {
     CertificatesCertIdChaptersChapterIdPracticeRoute,
   CertificatesCertIdChaptersChapterIdResultsRoute:
     CertificatesCertIdChaptersChapterIdResultsRoute,
-}
+};
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();
 
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
+import type { getRouter } from "./router.tsx";
+import type { createStart } from "@tanstack/react-start";
+declare module "@tanstack/react-start" {
   interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
+    ssr: true;
+    router: Awaited<ReturnType<typeof getRouter>>;
   }
 }

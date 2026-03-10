@@ -1,41 +1,50 @@
-import { useState, useEffect } from 'react'
-import { Link, createFileRoute, notFound } from '@tanstack/react-router'
-import ExamQuestionCard from '#/components/ExamQuestionCard'
-import Timer from '#/components/Timer'
-import { Button } from '#/components/ui/button'
-import { useExitConfirmation } from '#/hooks/useExitConfirmation'
-import { useExamState, clearExamData } from '#/hooks/useExamState'
-import { getCertificateById, getChapterById } from '#/utils/data'
+import { useState, useEffect } from "react";
+import { Link, createFileRoute, notFound } from "@tanstack/react-router";
+import ExamQuestionCard from "#/components/ExamQuestionCard";
+import Timer from "#/components/Timer";
+import { Button } from "#/components/ui/button";
+import { useExitConfirmation } from "#/hooks/useExitConfirmation";
+import { useExamState, clearExamData } from "#/hooks/useExamState";
+import { getCertificateById, getChapterById } from "#/utils/data";
 
 export const Route = createFileRoute(
-  '/certificates/$certId/chapters/$chapterId/exam',
+  "/certificates/$certId/chapters/$chapterId/exam",
 )({
   loader: ({ params }) => {
-    const certificate = getCertificateById(params.certId)
-    if (!certificate) throw notFound()
-    const chapter = getChapterById(params.certId, params.chapterId)
-    if (!chapter) throw notFound()
-    return { certificate, chapter }
+    const certificate = getCertificateById(params.certId);
+    if (!certificate) throw notFound();
+    const chapter = getChapterById(params.certId, params.chapterId);
+    if (!chapter) throw notFound();
+    return { certificate, chapter };
   },
   head: ({ loaderData }) => {
-    const certTitle = loaderData?.certificate.title ?? 'Certificate'
-    const chTitle = loaderData?.chapter.title ?? 'Exam'
+    const certTitle = loaderData?.certificate.title ?? "Certificate";
+    const chTitle = loaderData?.chapter.title ?? "Exam";
     return {
       meta: [
         { title: `Exam: ${chTitle} — ${certTitle} — Testology` },
         {
-          name: 'description',
+          name: "description",
           content: `Timed exam for ${chTitle} — ${certTitle}. 60-minute countdown with exam simulation.`,
         },
-        { property: 'og:title', content: `Exam: ${chTitle} — ${certTitle} — Testology` },
-        { property: 'og:description', content: `Timed exam for ${chTitle} — ${certTitle}.` },
-        { property: 'og:image', content: `${import.meta.env.BASE_URL}favicon-logo.png` },
+        {
+          property: "og:title",
+          content: `Exam: ${chTitle} — ${certTitle} — Testology`,
+        },
+        {
+          property: "og:description",
+          content: `Timed exam for ${chTitle} — ${certTitle}.`,
+        },
+        {
+          property: "og:image",
+          content: `${import.meta.env.BASE_URL}favicon-logo.png`,
+        },
       ],
-    }
+    };
   },
   notFoundComponent: NotFoundComponent,
   component: ExamPage,
-})
+});
 
 function NotFoundComponent() {
   return (
@@ -58,55 +67,54 @@ function NotFoundComponent() {
         Back to Certificates
       </a>
     </main>
-  )
+  );
 }
 
 function ExamPage() {
-  const { certificate, chapter } = Route.useLoaderData()
-  const { certId, chapterId } = Route.useParams()
-  const exam = useExamState(certId, chapterId, chapter.questions)
-  const [showReviewModal, setShowReviewModal] = useState(false)
-  const [showTimesUp, setShowTimesUp] = useState(false)
+  const { certificate, chapter } = Route.useLoaderData();
+  const { certId, chapterId } = Route.useParams();
+  const exam = useExamState(certId, chapterId, chapter.questions);
+  const [showReviewModal, setShowReviewModal] = useState(false);
+  const [showTimesUp, setShowTimesUp] = useState(false);
 
   // Block navigation while exam is running
-  const blocker = useExitConfirmation(exam.status === 'running')
+  const blocker = useExitConfirmation(exam.status === "running");
 
   // Auto-submit on timer expiry
   useEffect(() => {
-    if (exam.status === 'expired') {
-      setShowTimesUp(true)
+    if (exam.status === "expired") {
+      setShowTimesUp(true);
       const timeout = setTimeout(() => {
-        submitExam()
-      }, 3000)
-      return () => clearTimeout(timeout)
+        submitExam();
+      }, 3000);
+      return () => clearTimeout(timeout);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [exam.status])
+  }, [exam.status]);
 
   function submitExam() {
     // Save final answers for results page
-    const key = `testology:${certId}:${chapterId}:exam`
+    const key = `testology:${certId}:${chapterId}:exam`;
     localStorage.setItem(
       key,
       JSON.stringify({
         answers: exam.answers,
         questions: exam.questions,
       }),
-    )
-    window.location.href = `${import.meta.env.BASE_URL}certificates/${certId}/chapters/${chapterId}/results?mode=exam`
+    );
+    window.location.href = `${import.meta.env.BASE_URL}certificates/${certId}/chapters/${chapterId}/results?mode=exam`;
   }
 
   // Resume/Restart prompt
-  if (exam.status === 'prompt') {
+  if (exam.status === "prompt") {
     return (
       <main className="flex min-h-[60vh] flex-col items-center justify-center px-4 py-16 text-center">
         <h1 className="mb-2 text-2xl font-bold text-foreground">
           Resume Exam?
         </h1>
         <p className="mb-8 max-w-md text-muted-foreground">
-          You have an in-progress attempt for{' '}
-          <strong>{chapter.title}</strong>. Would you like to resume or
-          start a new exam?
+          You have an in-progress attempt for <strong>{chapter.title}</strong>.
+          Would you like to resume or start a new exam?
         </p>
         <div className="flex gap-3">
           <Button variant="outline" onClick={exam.startNew}>
@@ -115,7 +123,7 @@ function ExamPage() {
           <Button onClick={exam.resume}>Resume Exam</Button>
         </div>
       </main>
-    )
+    );
   }
 
   // Time's up modal
@@ -134,7 +142,7 @@ function ExamPage() {
           </div>
         </div>
       </>
-    )
+    );
   }
 
   // Empty state — chapter has no questions
@@ -146,10 +154,14 @@ function ExamPage() {
           alt="Za'atar — Testology mascot"
           className="mb-6 h-40 w-auto opacity-80"
         />
-        <p className="text-lg font-medium text-foreground">No questions available yet</p>
-        <p className="mt-1 text-sm text-muted-foreground">Check back later for new content.</p>
+        <p className="text-lg font-medium text-foreground">
+          No questions available yet
+        </p>
+        <p className="mt-1 text-sm text-muted-foreground">
+          Check back later for new content.
+        </p>
       </main>
-    )
+    );
   }
 
   // Waiting for questions to load
@@ -158,7 +170,7 @@ function ExamPage() {
       <main className="flex min-h-[60vh] items-center justify-center">
         <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
       </main>
-    )
+    );
   }
 
   return (
@@ -208,21 +220,29 @@ function ExamPage() {
 
       {/* Review Modal */}
       {showReviewModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50" role="dialog" aria-modal="true" aria-labelledby="review-title">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="review-title"
+        >
           <div className="mx-4 w-full max-w-md rounded-xl bg-card p-6 shadow-lg">
-            <h2 id="review-title" className="mb-4 text-xl font-bold text-foreground">
+            <h2
+              id="review-title"
+              className="mb-4 text-xl font-bold text-foreground"
+            >
               Review Submission
             </h2>
             <div className="mb-6 space-y-2 text-sm">
               <p className="text-foreground">
-                Answered:{' '}
-                <strong className="text-primary">{exam.answeredCount}</strong> /{' '}
+                Answered:{" "}
+                <strong className="text-primary">{exam.answeredCount}</strong> /{" "}
                 {exam.totalQuestions}
               </p>
               {exam.unansweredCount > 0 && (
                 <p className="text-testology-error">
                   {exam.unansweredCount} question
-                  {exam.unansweredCount === 1 ? '' : 's'} unanswered
+                  {exam.unansweredCount === 1 ? "" : "s"} unanswered
                 </p>
               )}
             </div>
@@ -243,10 +263,18 @@ function ExamPage() {
       )}
 
       {/* Exit Confirmation Modal */}
-      {blocker.status === 'blocked' && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50" role="dialog" aria-modal="true" aria-labelledby="exit-title">
+      {blocker.status === "blocked" && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="exit-title"
+        >
           <div className="mx-4 w-full max-w-md rounded-xl bg-card p-6 shadow-lg">
-            <h2 id="exit-title" className="mb-2 text-xl font-bold text-foreground">
+            <h2
+              id="exit-title"
+              className="mb-2 text-xl font-bold text-foreground"
+            >
               Leave Exam?
             </h2>
             <p className="mb-6 text-sm text-muted-foreground">
@@ -264,8 +292,8 @@ function ExamPage() {
                 variant="destructive"
                 className="flex-1"
                 onClick={() => {
-                  clearExamData(certId, chapterId)
-                  blocker.proceed()
+                  clearExamData(certId, chapterId);
+                  blocker.proceed();
                 }}
               >
                 Leave
@@ -275,5 +303,5 @@ function ExamPage() {
         </div>
       )}
     </>
-  )
+  );
 }

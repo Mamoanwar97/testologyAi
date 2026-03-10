@@ -21,8 +21,14 @@
         "options": [
           { "id": "a", "text": "AWS is responsible for everything" },
           { "id": "b", "text": "The customer is responsible for everything" },
-          { "id": "c", "text": "AWS manages security OF the cloud; customers manage security IN the cloud" },
-          { "id": "d", "text": "Security responsibilities are determined by the pricing tier" }
+          {
+            "id": "c",
+            "text": "AWS manages security OF the cloud; customers manage security IN the cloud"
+          },
+          {
+            "id": "d",
+            "text": "Security responsibilities are determined by the pricing tier"
+          }
         ],
         "correctAnswer": "c",
         "explanation": "Under the shared responsibility model, AWS is responsible for protecting the infrastructure (hardware, software, networking) while customers are responsible for securing their data, applications, and configurations."
@@ -56,7 +62,10 @@
         "text": "What does the AWS Well-Architected Framework provide?",
         "options": [
           { "id": "a", "text": "Free AWS credits for startups" },
-          { "id": "b", "text": "A set of best practices and guidelines for building secure, high-performing, resilient cloud architectures" },
+          {
+            "id": "b",
+            "text": "A set of best practices and guidelines for building secure, high-performing, resilient cloud architectures"
+          },
           { "id": "c", "text": "Automatic code deployment pipelines" },
           { "id": "d", "text": "Hardware provisioning templates" }
         ],
@@ -73,9 +82,15 @@
         "id": "cc-q1",
         "text": "What is cloud computing?",
         "options": [
-          { "id": "a", "text": "On-demand delivery of IT resources over the Internet with pay-as-you-go pricing" },
+          {
+            "id": "a",
+            "text": "On-demand delivery of IT resources over the Internet with pay-as-you-go pricing"
+          },
           { "id": "b", "text": "Storing files on a local hard drive" },
-          { "id": "c", "text": "Running software only on physical servers in your office" },
+          {
+            "id": "c",
+            "text": "Running software only on physical servers in your office"
+          },
           { "id": "d", "text": "A type of programming language" }
         ],
         "correctAnswer": "a",
@@ -97,8 +112,14 @@
         "id": "cc-q3",
         "text": "What does 'elasticity' mean in cloud computing?",
         "options": [
-          { "id": "a", "text": "The ability to physically stretch server hardware" },
-          { "id": "b", "text": "The ability to acquire resources as needed and release them when no longer required" },
+          {
+            "id": "a",
+            "text": "The ability to physically stretch server hardware"
+          },
+          {
+            "id": "b",
+            "text": "The ability to acquire resources as needed and release them when no longer required"
+          },
           { "id": "c", "text": "The speed of the internet connection" },
           { "id": "d", "text": "The durability of stored data" }
         ],
@@ -122,7 +143,10 @@
         "text": "What is the difference between IaaS, PaaS, and SaaS?",
         "options": [
           { "id": "a", "text": "They are different programming languages" },
-          { "id": "b", "text": "They represent different levels of cloud service abstraction: infrastructure, platform, and software" },
+          {
+            "id": "b",
+            "text": "They represent different levels of cloud service abstraction: infrastructure, platform, and software"
+          },
           { "id": "c", "text": "They are AWS-specific pricing tiers" },
           { "id": "d", "text": "They are types of internet protocols" }
         ],
@@ -152,7 +176,10 @@
         "text": "What is the principle of least privilege?",
         "options": [
           { "id": "a", "text": "Giving all users administrator access" },
-          { "id": "b", "text": "Granting only the minimum permissions needed to perform a task" },
+          {
+            "id": "b",
+            "text": "Granting only the minimum permissions needed to perform a task"
+          },
           { "id": "c", "text": "Using the cheapest AWS services available" },
           { "id": "d", "text": "Reducing the number of AWS accounts" }
         ],
@@ -176,7 +203,10 @@
         "text": "What does AWS CloudTrail do?",
         "options": [
           { "id": "a", "text": "Monitors application performance" },
-          { "id": "b", "text": "Records API calls and user activity across your AWS account" },
+          {
+            "id": "b",
+            "text": "Records API calls and user activity across your AWS account"
+          },
           { "id": "c", "text": "Provides content delivery network services" },
           { "id": "d", "text": "Manages DNS routing" }
         ],

@@ -1,4 +1,4 @@
-import { useBlocker } from '@tanstack/react-router'
+import { useBlocker } from "@tanstack/react-router";
 
 /**
  * Blocks in-app navigation with a resolver (proceed/reset) and
@@ -11,5 +11,5 @@ export function useExitConfirmation(enabled: boolean) {
     shouldBlockFn: () => enabled,
     enableBeforeUnload: () => enabled,
     withResolver: true,
-  })
+  });
 }

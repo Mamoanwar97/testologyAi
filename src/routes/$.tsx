@@ -1,15 +1,15 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { buttonVariants } from '#/components/ui/button'
+import { createFileRoute } from "@tanstack/react-router";
+import { buttonVariants } from "#/components/ui/button";
 
-export const Route = createFileRoute('/$')({
+export const Route = createFileRoute("/$")({
   head: () => ({
     meta: [
-      { title: 'Page Not Found — Testology' },
-      { name: 'description', content: 'This page does not exist.' },
+      { title: "Page Not Found — Testology" },
+      { name: "description", content: "This page does not exist." },
     ],
   }),
   component: NotFoundPage,
-})
+});
 
 function NotFoundPage() {
   return (
@@ -27,10 +27,10 @@ function NotFoundPage() {
       </p>
       <a
         href={`${import.meta.env.BASE_URL}certificates`}
-        className={buttonVariants({ variant: 'default' }) + ' no-underline'}
+        className={buttonVariants({ variant: "default" }) + " no-underline"}
       >
         Browse Certificates
       </a>
     </main>
-  )
+  );
 }

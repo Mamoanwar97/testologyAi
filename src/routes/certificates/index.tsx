@@ -1,30 +1,30 @@
-import { createFileRoute } from '@tanstack/react-router'
-import CertificateCard from '#/components/CertificateCard'
-import { getCertificates } from '#/utils/data'
+import { createFileRoute } from "@tanstack/react-router";
+import CertificateCard from "#/components/CertificateCard";
+import { getCertificates } from "#/utils/data";
 
-export const Route = createFileRoute('/certificates/')({
+export const Route = createFileRoute("/certificates/")({
   head: () => ({
     meta: [
-      { title: 'Certificates — Testology' },
+      { title: "Certificates — Testology" },
       {
-        name: 'description',
+        name: "description",
         content:
-          'Browse IT certification practice exams. AWS Cloud Practitioner, Azure Fundamentals, CompTIA A+, and more.',
+          "Browse IT certification practice exams. AWS Cloud Practitioner, Azure Fundamentals, CompTIA A+, and more.",
       },
-      { property: 'og:title', content: 'Certificates — Testology' },
+      { property: "og:title", content: "Certificates — Testology" },
       {
-        property: 'og:description',
+        property: "og:description",
         content:
-          'Browse IT certification practice exams. AWS, Azure, CompTIA, and more.',
+          "Browse IT certification practice exams. AWS, Azure, CompTIA, and more.",
       },
-      { property: 'og:image', content: '/favicon-logo.png' },
+      { property: "og:image", content: "/thumbnail.png" },
     ],
   }),
   component: CertificatesPage,
-})
+});
 
 function CertificatesPage() {
-  const certificates = getCertificates()
+  const certificates = getCertificates();
 
   return (
     <main className="px-4 py-12 sm:py-16">
@@ -46,5 +46,5 @@ function CertificatesPage() {
         </div>
       </div>
     </main>
-  )
+  );
 }

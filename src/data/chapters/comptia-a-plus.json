@@ -8,7 +8,10 @@
         "text": "What is the purpose of thermal paste in a computer?",
         "options": [
           { "id": "a", "text": "To glue the CPU to the motherboard" },
-          { "id": "b", "text": "To improve heat transfer between the CPU and the heat sink" },
+          {
+            "id": "b",
+            "text": "To improve heat transfer between the CPU and the heat sink"
+          },
           { "id": "c", "text": "To increase RAM speed" },
           { "id": "d", "text": "To protect against electrical surges" }
         ],
@@ -43,10 +46,22 @@
         "id": "all-q4",
         "text": "What does DHCP stand for and what does it do?",
         "options": [
-          { "id": "a", "text": "Dynamic Host Configuration Protocol — automatically assigns IP addresses to devices" },
-          { "id": "b", "text": "Direct Hardware Control Protocol — manages hardware devices" },
-          { "id": "c", "text": "Data Handling and Communication Protocol — encrypts network data" },
-          { "id": "d", "text": "Distributed Host Computing Platform — manages cloud resources" }
+          {
+            "id": "a",
+            "text": "Dynamic Host Configuration Protocol — automatically assigns IP addresses to devices"
+          },
+          {
+            "id": "b",
+            "text": "Direct Hardware Control Protocol — manages hardware devices"
+          },
+          {
+            "id": "c",
+            "text": "Data Handling and Communication Protocol — encrypts network data"
+          },
+          {
+            "id": "d",
+            "text": "Distributed Host Computing Platform — manages cloud resources"
+          }
         ],
         "correctAnswer": "a",
         "explanation": "DHCP (Dynamic Host Configuration Protocol) automatically assigns IP addresses and other network configuration parameters to devices, eliminating the need for manual network configuration."
@@ -74,7 +89,10 @@
         "text": "What is the function of the motherboard in a computer?",
         "options": [
           { "id": "a", "text": "To store permanent data" },
-          { "id": "b", "text": "To serve as the main circuit board connecting all components" },
+          {
+            "id": "b",
+            "text": "To serve as the main circuit board connecting all components"
+          },
           { "id": "c", "text": "To display graphics on the screen" },
           { "id": "d", "text": "To cool the processor" }
         ],
@@ -85,10 +103,22 @@
         "id": "hw-q2",
         "text": "What is the difference between SSD and HDD?",
         "options": [
-          { "id": "a", "text": "SSDs use spinning disks; HDDs use flash memory" },
-          { "id": "b", "text": "SSDs use flash memory with no moving parts; HDDs use spinning magnetic disks" },
-          { "id": "c", "text": "They are the same technology with different names" },
-          { "id": "d", "text": "SSDs are only used in servers; HDDs are for personal computers" }
+          {
+            "id": "a",
+            "text": "SSDs use spinning disks; HDDs use flash memory"
+          },
+          {
+            "id": "b",
+            "text": "SSDs use flash memory with no moving parts; HDDs use spinning magnetic disks"
+          },
+          {
+            "id": "c",
+            "text": "They are the same technology with different names"
+          },
+          {
+            "id": "d",
+            "text": "SSDs are only used in servers; HDDs are for personal computers"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "SSDs (Solid State Drives) use NAND flash memory with no moving parts, offering faster read/write speeds. HDDs (Hard Disk Drives) use spinning magnetic platters and are generally cheaper per gigabyte."
@@ -98,9 +128,18 @@
         "text": "What does RAM stand for and what is its purpose?",
         "options": [
           { "id": "a", "text": "Read Access Memory — stores data permanently" },
-          { "id": "b", "text": "Random Access Memory — provides temporary fast storage for active programs and data" },
-          { "id": "c", "text": "Rapid Application Manager — speeds up software installations" },
-          { "id": "d", "text": "Remote Access Module — enables network connections" }
+          {
+            "id": "b",
+            "text": "Random Access Memory — provides temporary fast storage for active programs and data"
+          },
+          {
+            "id": "c",
+            "text": "Rapid Application Manager — speeds up software installations"
+          },
+          {
+            "id": "d",
+            "text": "Remote Access Module — enables network connections"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "RAM (Random Access Memory) is volatile memory that temporarily stores data and instructions for programs currently in use, allowing the CPU to access them quickly."
@@ -110,7 +149,10 @@
         "text": "What is the purpose of a power supply unit (PSU)?",
         "options": [
           { "id": "a", "text": "To store electricity for later use" },
-          { "id": "b", "text": "To convert AC power from the wall outlet to DC power for computer components" },
+          {
+            "id": "b",
+            "text": "To convert AC power from the wall outlet to DC power for computer components"
+          },
           { "id": "c", "text": "To regulate internet speed" },
           { "id": "d", "text": "To control the display brightness" }
         ],
@@ -139,8 +181,14 @@
         "id": "net-q1",
         "text": "What is an IP address?",
         "options": [
-          { "id": "a", "text": "A physical address printed on the network card" },
-          { "id": "b", "text": "A unique numerical label assigned to each device on a network" },
+          {
+            "id": "a",
+            "text": "A physical address printed on the network card"
+          },
+          {
+            "id": "b",
+            "text": "A unique numerical label assigned to each device on a network"
+          },
           { "id": "c", "text": "A type of encryption protocol" },
           { "id": "d", "text": "A brand of networking equipment" }
         ],
@@ -152,9 +200,18 @@
         "text": "What is the difference between TCP and UDP?",
         "options": [
           { "id": "a", "text": "TCP is wireless; UDP is wired" },
-          { "id": "b", "text": "TCP is connection-oriented and reliable; UDP is connectionless and faster but less reliable" },
-          { "id": "c", "text": "TCP is for email only; UDP is for web browsing only" },
-          { "id": "d", "text": "They are the same protocol with different versions" }
+          {
+            "id": "b",
+            "text": "TCP is connection-oriented and reliable; UDP is connectionless and faster but less reliable"
+          },
+          {
+            "id": "c",
+            "text": "TCP is for email only; UDP is for web browsing only"
+          },
+          {
+            "id": "d",
+            "text": "They are the same protocol with different versions"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "TCP (Transmission Control Protocol) establishes a connection and guarantees delivery with error checking. UDP (User Datagram Protocol) sends data without establishing a connection, trading reliability for speed."
@@ -164,7 +221,10 @@
         "text": "What is a subnet mask used for?",
         "options": [
           { "id": "a", "text": "To encrypt network traffic" },
-          { "id": "b", "text": "To determine which portion of an IP address refers to the network and which refers to the host" },
+          {
+            "id": "b",
+            "text": "To determine which portion of an IP address refers to the network and which refers to the host"
+          },
           { "id": "c", "text": "To block unauthorized users" },
           { "id": "d", "text": "To speed up internet connections" }
         ],

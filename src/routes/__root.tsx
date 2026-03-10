@@ -1,53 +1,74 @@
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanStackDevtools } from '@tanstack/react-devtools'
-import ErrorBoundary from '../components/ErrorBoundary'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
+import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
+import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
+import { TanStackDevtools } from "@tanstack/react-devtools";
+import ErrorBoundary from "../components/ErrorBoundary";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
-import appCss from '../styles.css?url'
+import appCss from "../styles.css?url";
 
-const THEME_INIT_SCRIPT = `(function(){try{var stored=window.localStorage.getItem('theme');var mode=(stored==='light'||stored==='dark'||stored==='auto')?stored:'auto';var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;var resolved=mode==='auto'?(prefersDark?'dark':'light'):mode;var root=document.documentElement;root.classList.remove('light','dark');root.classList.add(resolved);if(mode==='auto'){root.removeAttribute('data-theme')}else{root.setAttribute('data-theme',mode)}root.style.colorScheme=resolved;}catch(e){}})();`
+const THEME_INIT_SCRIPT = `(function(){try{var stored=window.localStorage.getItem('theme');var mode=(stored==='light'||stored==='dark'||stored==='auto')?stored:'auto';var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;var resolved=mode==='auto'?(prefersDark?'dark':'light'):mode;var root=document.documentElement;root.classList.remove('light','dark');root.classList.add(resolved);if(mode==='auto'){root.removeAttribute('data-theme')}else{root.setAttribute('data-theme',mode)}root.style.colorScheme=resolved;}catch(e){}})();`;
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
-      { charSet: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'Testology — IT Certification Practice Exams' },
+      { charSet: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { title: "Testology — IT Certification Practice Exams" },
       {
-        name: 'description',
+        name: "description",
         content:
-          'Practice smarter, certify faster. Free practice exams and study tools for AWS, Azure, CompTIA, and more IT certifications.',
+          "Practice smarter, certify faster. Free practice exams and study tools for AWS, Azure, CompTIA, and more IT certifications.",
       },
-      { name: 'theme-color', content: '#1A2744' },
+      { name: "theme-color", content: "#1A2744" },
       // OpenGraph
-      { property: 'og:type', content: 'website' },
-      { property: 'og:title', content: 'Testology — IT Certification Practice Exams' },
+      { property: "og:type", content: "website" },
       {
-        property: 'og:description',
-        content:
-          'Practice smarter, certify faster. Free practice exams for AWS, Azure, CompTIA, and more.',
+        property: "og:title",
+        content: "Testology — IT Certification Practice Exams",
       },
-      { property: 'og:image', content: `${import.meta.env.BASE_URL}favicon-logo.png` },
-      { property: 'og:site_name', content: 'Testology' },
+      {
+        property: "og:description",
+        content:
+          "Practice smarter, certify faster. Free practice exams for AWS, Azure, CompTIA, and more.",
+      },
+      {
+        property: "og:image",
+        content: `${import.meta.env.BASE_URL}thumbnail.png`,
+      },
+      { property: "og:site_name", content: "Testology" },
       // Twitter
-      { name: 'twitter:card', content: 'summary' },
-      { name: 'twitter:title', content: 'Testology — IT Certification Practice Exams' },
+      { name: "twitter:card", content: "summary" },
       {
-        name: 'twitter:description',
-        content:
-          'Free practice exams for AWS, Azure, CompTIA, and more IT certifications.',
+        name: "twitter:title",
+        content: "Testology — IT Certification Practice Exams",
       },
-      { name: 'twitter:image', content: `${import.meta.env.BASE_URL}favicon-logo.png` },
+      {
+        name: "twitter:description",
+        content:
+          "Free practice exams for AWS, Azure, CompTIA, and more IT certifications.",
+      },
+      {
+        name: "twitter:image",
+        content: `${import.meta.env.BASE_URL}thumbnail.png`,
+      },
     ],
     links: [
-      { rel: 'stylesheet', href: appCss },
-      { rel: 'icon', href: `${import.meta.env.BASE_URL}favicon-logo.png`, type: 'image/png' },
+      { rel: "stylesheet", href: appCss },
+      {
+        rel: "icon",
+        href: `${import.meta.env.BASE_URL}favicon-logo.png`,
+        type: "image/png",
+      },
+      {
+        rel: "icon",
+        href: `${import.meta.env.BASE_URL}thumbnail.png`,
+        type: "image/png",
+      },
     ],
   }),
   shellComponent: RootDocument,
-})
+});
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
@@ -65,14 +86,16 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         </a>
         <Header />
         <ErrorBoundary>
-          <div id="main-content" className="flex-1">{children}</div>
+          <div id="main-content" className="flex-1">
+            {children}
+          </div>
         </ErrorBoundary>
         <Footer />
         <TanStackDevtools
-          config={{ position: 'bottom-right' }}
+          config={{ position: "bottom-right" }}
           plugins={[
             {
-              name: 'Tanstack Router',
+              name: "Tanstack Router",
               render: <TanStackRouterDevtoolsPanel />,
             },
           ]}
@@ -80,5 +103,5 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Scripts />
       </body>
     </html>
-  )
+  );
 }

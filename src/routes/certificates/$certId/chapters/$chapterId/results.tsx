@@ -1,51 +1,60 @@
-import { useEffect, useRef } from 'react'
-import { Link, createFileRoute, notFound } from '@tanstack/react-router'
-import confetti from 'canvas-confetti'
-import ResultsSummary from '#/components/ResultsSummary'
-import WrongAnswerReview from '#/components/WrongAnswerReview'
-import { Button } from '#/components/ui/button'
-import type { Question } from '#/types'
-import { getCertificateById, getChapterById } from '#/utils/data'
+import { useEffect, useRef } from "react";
+import { Link, createFileRoute, notFound } from "@tanstack/react-router";
+import confetti from "canvas-confetti";
+import ResultsSummary from "#/components/ResultsSummary";
+import WrongAnswerReview from "#/components/WrongAnswerReview";
+import { Button } from "#/components/ui/button";
+import type { Question } from "#/types";
+import { getCertificateById, getChapterById } from "#/utils/data";
 
-const PASS_THRESHOLD = 0.8
+const PASS_THRESHOLD = 0.8;
 
 interface ExamData {
-  answers: Record<string, string>
-  questions: Question[]
+  answers: Record<string, string>;
+  questions: Question[];
 }
 
 export const Route = createFileRoute(
-  '/certificates/$certId/chapters/$chapterId/results',
+  "/certificates/$certId/chapters/$chapterId/results",
 )({
   validateSearch: (search: Record<string, unknown>) => ({
-    mode: (search.mode as 'exam' | 'practice') || 'exam',
+    mode: (search.mode as "exam" | "practice") || "exam",
   }),
   loader: ({ params }) => {
-    const certificate = getCertificateById(params.certId)
-    if (!certificate) throw notFound()
-    const chapter = getChapterById(params.certId, params.chapterId)
-    if (!chapter) throw notFound()
-    return { certificate, chapter }
+    const certificate = getCertificateById(params.certId);
+    if (!certificate) throw notFound();
+    const chapter = getChapterById(params.certId, params.chapterId);
+    if (!chapter) throw notFound();
+    return { certificate, chapter };
   },
   head: ({ loaderData }) => {
-    const certTitle = loaderData?.certificate.title ?? 'Certificate'
-    const chTitle = loaderData?.chapter.title ?? 'Results'
+    const certTitle = loaderData?.certificate.title ?? "Certificate";
+    const chTitle = loaderData?.chapter.title ?? "Results";
     return {
       meta: [
         { title: `Results: ${chTitle} — ${certTitle} — Testology` },
         {
-          name: 'description',
+          name: "description",
           content: `Results for ${chTitle} — ${certTitle}.`,
         },
-        { property: 'og:title', content: `Results: ${chTitle} — ${certTitle} — Testology` },
-        { property: 'og:description', content: `Results for ${chTitle} — ${certTitle}.` },
-        { property: 'og:image', content: `${import.meta.env.BASE_URL}favicon-logo.png` },
+        {
+          property: "og:title",
+          content: `Results: ${chTitle} — ${certTitle} — Testology`,
+        },
+        {
+          property: "og:description",
+          content: `Results for ${chTitle} — ${certTitle}.`,
+        },
+        {
+          property: "og:image",
+          content: `${import.meta.env.BASE_URL}thumbnail.png`,
+        },
       ],
-    }
+    };
   },
   notFoundComponent: NotFoundComponent,
   component: ResultsPage,
-})
+});
 
 function NotFoundComponent() {
   return (
@@ -68,53 +77,59 @@ function NotFoundComponent() {
         Back to Certificates
       </a>
     </main>
-  )
+  );
 }
 
 function ResultsPage() {
-  const { certificate, chapter } = Route.useLoaderData()
-  const { certId, chapterId } = Route.useParams()
-  const { mode } = Route.useSearch()
-  const confettiFired = useRef(false)
+  const { certificate, chapter } = Route.useLoaderData();
+  const { certId, chapterId } = Route.useParams();
+  const { mode } = Route.useSearch();
+  const confettiFired = useRef(false);
 
-  const storageKey = `testology:${certId}:${chapterId}:${mode}`
-  const raw = typeof window !== 'undefined' ? localStorage.getItem(storageKey) : null
+  const storageKey = `testology:${certId}:${chapterId}:${mode}`;
+  const raw =
+    typeof window !== "undefined" ? localStorage.getItem(storageKey) : null;
 
   // Redirect if no data
   useEffect(() => {
     if (!raw) {
-      window.location.href = `${import.meta.env.BASE_URL}certificates/${certId}`
+      window.location.href = `${import.meta.env.BASE_URL}certificates/${certId}`;
     }
-  }, [raw, certId])
+  }, [raw, certId]);
 
   // Parse stored data
-  let answers: Record<string, string> = {}
-  let questions: Question[] = chapter.questions
+  let answers: Record<string, string> = {};
+  let questions: Question[] = chapter.questions;
 
   if (raw) {
-    if (mode === 'exam') {
-      const examData: ExamData = JSON.parse(raw)
-      answers = examData.answers
-      questions = examData.questions
+    if (mode === "exam") {
+      const examData: ExamData = JSON.parse(raw);
+      answers = examData.answers;
+      questions = examData.questions;
     } else {
-      answers = JSON.parse(raw)
+      answers = JSON.parse(raw);
     }
   }
 
   // Calculate score
-  const total = questions.length
-  const score = questions.filter((q) => answers[q.id] === q.correctAnswer).length
-  const percentage = total > 0 ? Math.round((score / total) * 100) : 0
-  const passed = mode === 'exam' ? percentage >= PASS_THRESHOLD * 100 : undefined
+  const total = questions.length;
+  const score = questions.filter(
+    (q) => answers[q.id] === q.correctAnswer,
+  ).length;
+  const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
+  const passed =
+    mode === "exam" ? percentage >= PASS_THRESHOLD * 100 : undefined;
 
   // Fire confetti on pass (respect reduced motion)
   useEffect(() => {
-    if (mode === 'exam' && passed && !confettiFired.current) {
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      if (prefersReducedMotion) return
-      confettiFired.current = true
-      const end = Date.now() + 2000
-      const colors = ['#2563EB', '#00B4FF', '#16A34A', '#60A5FA']
+    if (mode === "exam" && passed && !confettiFired.current) {
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      if (prefersReducedMotion) return;
+      confettiFired.current = true;
+      const end = Date.now() + 2000;
+      const colors = ["#2563EB", "#00B4FF", "#16A34A", "#60A5FA"];
 
       function frame() {
         confetti({
@@ -123,27 +138,27 @@ function ResultsPage() {
           spread: 55,
           origin: { x: 0 },
           colors,
-        })
+        });
         confetti({
           particleCount: 3,
           angle: 120,
           spread: 55,
           origin: { x: 1 },
           colors,
-        })
+        });
         if (Date.now() < end) {
-          requestAnimationFrame(frame)
+          requestAnimationFrame(frame);
         }
       }
-      frame()
+      frame();
     }
-  }, [mode, passed])
+  }, [mode, passed]);
 
-  if (!raw) return null
+  if (!raw) return null;
 
   function handleTryAgain() {
-    localStorage.removeItem(storageKey)
-    window.location.href = `${import.meta.env.BASE_URL}certificates/${certId}/chapters/${chapterId}/${mode}`
+    localStorage.removeItem(storageKey);
+    window.location.href = `${import.meta.env.BASE_URL}certificates/${certId}/chapters/${chapterId}/${mode}`;
   }
 
   return (
@@ -179,21 +194,18 @@ function ResultsPage() {
         {/* Action buttons */}
         <div className="mb-10 flex flex-wrap items-center justify-center gap-3">
           <Button variant="outline" onClick={handleTryAgain}>
-            {mode === 'exam' ? 'Try Again' : 'Practice Again'}
+            {mode === "exam" ? "Try Again" : "Practice Again"}
           </Button>
-          <Link
-            to="/certificates/$certId"
-            params={{ certId }}
-          >
+          <Link to="/certificates/$certId" params={{ certId }}>
             <Button variant="secondary">Back to Chapters</Button>
           </Link>
         </div>
 
         {/* Wrong answers review — exam mode only */}
-        {mode === 'exam' && (
+        {mode === "exam" && (
           <WrongAnswerReview questions={questions} answers={answers} />
         )}
       </div>
     </main>
-  )
+  );
 }

@@ -1,9 +1,9 @@
-import { Check, X } from 'lucide-react'
-import type { Question } from '#/types'
+import { Check, X } from "lucide-react";
+import type { Question } from "#/types";
 
 interface WrongAnswerReviewProps {
-  questions: Question[]
-  answers: Record<string, string>
+  questions: Question[];
+  answers: Record<string, string>;
 }
 
 export default function WrongAnswerReview({
@@ -12,17 +12,20 @@ export default function WrongAnswerReview({
 }: WrongAnswerReviewProps) {
   const wrongQuestions = questions.filter(
     (q) => answers[q.id] && answers[q.id] !== q.correctAnswer,
-  )
+  );
 
   if (wrongQuestions.length === 0) {
     return (
       <div className="rounded-xl border border-testology-success/30 bg-testology-success/5 p-6 text-center">
-        <Check className="mx-auto mb-2 h-8 w-8 text-testology-success" aria-hidden="true" />
+        <Check
+          className="mx-auto mb-2 h-8 w-8 text-testology-success"
+          aria-hidden="true"
+        />
         <p className="font-medium text-testology-success">
           Perfect score! You got every question right.
         </p>
       </div>
-    )
+    );
   }
 
   return (
@@ -32,18 +35,22 @@ export default function WrongAnswerReview({
       </h3>
       <div className="space-y-4">
         {wrongQuestions.map((question) => {
-          const userAnswerId = answers[question.id]
-          const userAnswer = question.options.find((o) => o.id === userAnswerId)
+          const userAnswerId = answers[question.id];
+          const userAnswer = question.options.find(
+            (o) => o.id === userAnswerId,
+          );
           const correctAnswer = question.options.find(
             (o) => o.id === question.correctAnswer,
-          )
+          );
 
           return (
             <div
               key={question.id}
               className="rounded-xl border border-border bg-card p-5"
             >
-              <p className="mb-3 font-medium text-foreground">{question.text}</p>
+              <p className="mb-3 font-medium text-foreground">
+                {question.text}
+              </p>
 
               {/* User's wrong answer */}
               <div className="mb-2 flex items-start gap-2 rounded-lg border border-testology-error/50 bg-testology-error/10 px-3 py-2">
@@ -52,7 +59,7 @@ export default function WrongAnswerReview({
                   aria-label="Your answer (incorrect)"
                 />
                 <span className="text-sm text-foreground">
-                  {userAnswer?.text ?? 'No answer selected'}
+                  {userAnswer?.text ?? "No answer selected"}
                 </span>
               </div>
 
@@ -63,7 +70,7 @@ export default function WrongAnswerReview({
                   aria-label="Correct answer"
                 />
                 <span className="text-sm text-foreground">
-                  {correctAnswer?.text ?? 'Unknown'}
+                  {correctAnswer?.text ?? "Unknown"}
                 </span>
               </div>
 
@@ -74,9 +81,9 @@ export default function WrongAnswerReview({
                 </p>
               )}
             </div>
-          )
+          );
         })}
       </div>
     </section>
-  )
+  );
 }

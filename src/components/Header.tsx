@@ -1,5 +1,5 @@
-import { Link } from '@tanstack/react-router'
-import ThemeToggle from './ThemeToggle'
+import { Link } from "@tanstack/react-router";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   return (
@@ -25,14 +25,20 @@ export default function Header() {
             to="/"
             className="rounded-lg px-3 py-2 text-muted-foreground transition hover:bg-muted hover:text-foreground [&.active]:text-foreground"
             activeOptions={{ exact: true }}
-            activeProps={{ className: 'rounded-lg px-3 py-2 text-foreground transition hover:bg-muted' }}
+            activeProps={{
+              className:
+                "rounded-lg px-3 py-2 text-foreground transition hover:bg-muted",
+            }}
           >
             Home
           </Link>
           <Link
             to="/certificates"
             className="rounded-lg px-3 py-2 text-muted-foreground transition hover:bg-muted hover:text-foreground [&.active]:text-foreground"
-            activeProps={{ className: 'rounded-lg px-3 py-2 text-foreground transition hover:bg-muted' }}
+            activeProps={{
+              className:
+                "rounded-lg px-3 py-2 text-foreground transition hover:bg-muted",
+            }}
           >
             Certificates
           </Link>
@@ -46,5 +52,5 @@ export default function Header() {
         </div>
       </nav>
     </header>
-  )
+  );
 }
