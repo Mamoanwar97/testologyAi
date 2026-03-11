@@ -3,7 +3,13 @@
     "allow": [
       "WebFetch(domain:testologyai.com)",
       "WebFetch(domain:www.testologyai.com)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Read(///wsl.localhost/Ubuntu/home/mamoanwar97/code/testolgyAi/src/components/**)",
+      "Read(//mnt/wsl/Ubuntu/home/mamoanwar97/code/testolgyAi/src/components/**)"
+    ],
+    "additionalDirectories": [
+      "\\home\\mamoanwar97\\code\\testolgyAi\\src\\components",
+      "\\\\wsl.localhost\\Ubuntu\\home\\mamoanwar97\\code\\testolgyAi\\src\\components"
     ]
   }
 }
