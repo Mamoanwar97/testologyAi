@@ -20,10 +20,26 @@ function WhatsAppIcon({ size = 20 }: { size?: number }) {
 }
 
 const socialLinks = [
-  { href: "https://youtube.com/@testologygeeks?si=G00dkV08idhW44vD", icon: Youtube, label: "YouTube" },
-  { href: "https://www.facebook.com/groups/750516570186092", icon: Facebook, label: "Facebook" },
-  { href: "https://www.linkedin.com/in/omar-zidan-%F0%9F%8D%89-56b851108", icon: Linkedin, label: "LinkedIn" },
-  { href: "https://chat.whatsapp.com/DkquGZvYaVl6LhhWE7CznY", icon: WhatsAppIcon, label: "WhatsApp" },
+  {
+    href: "https://youtube.com/@testologygeeks?si=G00dkV08idhW44vD",
+    icon: Youtube,
+    label: "YouTube",
+  },
+  {
+    href: "https://www.facebook.com/groups/750516570186092",
+    icon: Facebook,
+    label: "Facebook",
+  },
+  {
+    href: "https://www.linkedin.com/in/omar-zidan-%F0%9F%8D%89-56b851108",
+    icon: Linkedin,
+    label: "LinkedIn",
+  },
+  {
+    href: "https://chat.whatsapp.com/DkquGZvYaVl6LhhWE7CznY",
+    icon: WhatsAppIcon,
+    label: "WhatsApp",
+  },
 ];
 
 export default function Footer() {
@@ -32,7 +48,7 @@ export default function Footer() {
   return (
     <footer className="mt-auto border-t border-border px-4 py-6 text-muted-foreground">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-center text-sm sm:flex-row sm:text-left">
-        <p className="m-0">&copy; {year} Testology. All rights reserved.</p>
+        <p className="m-0">&copy; {year} TestologyAi. All rights reserved.</p>
         <div className="flex items-center gap-3">
           {socialLinks.map(({ href, icon: Icon, label }) => (
             <a
