@@ -33,15 +33,17 @@ export default function ChapterCard({ chapter, certId }: ChapterCardProps) {
       </div>
 
       <div className="mt-auto flex gap-3 pt-4">
-        <Link
-          to="/certificates/$certId/chapters/$chapterId/practice"
-          params={{ certId, chapterId: chapter.id }}
-          className={
-            buttonVariants({ variant: "outline" }) + " flex-1 no-underline"
-          }
-        >
-          Practice
-        </Link>
+        {!isAll && (
+          <Link
+            to="/certificates/$certId/chapters/$chapterId/practice"
+            params={{ certId, chapterId: chapter.id }}
+            className={
+              buttonVariants({ variant: "outline" }) + " flex-1 no-underline"
+            }
+          >
+            Practice
+          </Link>
+        )}
         <Link
           to="/certificates/$certId/chapters/$chapterId/exam"
           params={{ certId, chapterId: chapter.id }}

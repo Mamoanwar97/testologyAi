@@ -78,61 +78,6 @@ function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Features Section */}
-      <section className="px-4 py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="mb-10 text-center text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            Why Testology?
-          </h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                title: "Practice Mode",
-                desc: "Get instant feedback on every question. Learn from detailed explanations as you go.",
-              },
-              {
-                title: "Exam Simulation",
-                desc: "Timed exams that mirror the real test experience. Build confidence before exam day.",
-              },
-              {
-                title: "Track Progress",
-                desc: "See your scores, review wrong answers, and focus on areas that need improvement.",
-              },
-            ].map((feature) => (
-              <article
-                key={feature.title}
-                className="rounded-xl border border-border bg-card p-6 transition hover:shadow-md"
-              >
-                <h3 className="mb-2 text-lg font-semibold text-foreground">
-                  {feature.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {feature.desc}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="border-t border-border bg-muted/50 px-4 py-16">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="mb-4 text-2xl font-bold text-foreground">
-            Ready to start practicing?
-          </h2>
-          <p className="mb-6 text-muted-foreground">
-            Choose a certification and begin your journey today.
-          </p>
-          <Link
-            to="/certificates"
-            className={buttonVariants({ size: "lg" }) + " no-underline"}
-          >
-            Browse Certificates
-          </Link>
-        </div>
-      </section>
     </main>
   );
 }
