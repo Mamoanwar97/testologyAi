@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wsl rm:*)",
+      "Bash(wsl -e bash -lc:*)"
+    ],
+    "additionalDirectories": [
+      "\\home\\mamoanwar97\\code\\testolgyAi",
+      "\\\\wsl.localhost\\Ubuntu\\home\\mamoanwar97\\code\\testolgyAi"
+    ]
+  }
+}
