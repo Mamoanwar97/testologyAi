@@ -14,7 +14,7 @@ export default function WrongAnswerReview({
     (q) => answers[q.id] && answers[q.id] !== q.correctAnswer,
   );
 
-  if (wrongQuestions.length === 0) {
+  if (wrongQuestions.length === 0 && Object.keys(answers).length > 0) {
     return (
       <div className="rounded-xl border border-testology-success/30 bg-testology-success/5 p-6 text-center">
         <Check
