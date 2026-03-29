@@ -2,18 +2,28 @@
   {
     "id": "all",
     "title": "All Chapters",
-    "questions": [
+    "practiceQuestions": [],
+    "examQuestions": [
       {
         "id": "all-q1",
         "text": "What is the purpose of thermal paste in a computer?",
         "options": [
-          { "id": "a", "text": "To glue the CPU to the motherboard" },
+          {
+            "id": "a",
+            "text": "To glue the CPU to the motherboard"
+          },
           {
             "id": "b",
             "text": "To improve heat transfer between the CPU and the heat sink"
           },
-          { "id": "c", "text": "To increase RAM speed" },
-          { "id": "d", "text": "To protect against electrical surges" }
+          {
+            "id": "c",
+            "text": "To increase RAM speed"
+          },
+          {
+            "id": "d",
+            "text": "To protect against electrical surges"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "Thermal paste fills microscopic gaps between the CPU and heat sink surfaces, ensuring efficient heat transfer from the processor to the cooling solution."
@@ -22,10 +32,22 @@
         "id": "all-q2",
         "text": "Which network device operates at Layer 3 of the OSI model?",
         "options": [
-          { "id": "a", "text": "Hub" },
-          { "id": "b", "text": "Switch" },
-          { "id": "c", "text": "Router" },
-          { "id": "d", "text": "Repeater" }
+          {
+            "id": "a",
+            "text": "Hub"
+          },
+          {
+            "id": "b",
+            "text": "Switch"
+          },
+          {
+            "id": "c",
+            "text": "Router"
+          },
+          {
+            "id": "d",
+            "text": "Repeater"
+          }
         ],
         "correctAnswer": "c",
         "explanation": "Routers operate at Layer 3 (Network layer) of the OSI model. They use IP addresses to route packets between different networks."
@@ -34,10 +56,22 @@
         "id": "all-q3",
         "text": "What is RAID 1?",
         "options": [
-          { "id": "a", "text": "Disk striping without parity" },
-          { "id": "b", "text": "Disk mirroring for redundancy" },
-          { "id": "c", "text": "Disk striping with parity" },
-          { "id": "d", "text": "A combination of striping and mirroring" }
+          {
+            "id": "a",
+            "text": "Disk striping without parity"
+          },
+          {
+            "id": "b",
+            "text": "Disk mirroring for redundancy"
+          },
+          {
+            "id": "c",
+            "text": "Disk striping with parity"
+          },
+          {
+            "id": "d",
+            "text": "A combination of striping and mirroring"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "RAID 1 (mirroring) creates an exact copy of data on two or more drives. If one drive fails, the system continues operating from the mirror, providing redundancy."
@@ -70,10 +104,22 @@
         "id": "all-q5",
         "text": "What type of connector is commonly used for Ethernet networking?",
         "options": [
-          { "id": "a", "text": "RJ-11" },
-          { "id": "b", "text": "RJ-45" },
-          { "id": "c", "text": "USB Type-C" },
-          { "id": "d", "text": "BNC" }
+          {
+            "id": "a",
+            "text": "RJ-11"
+          },
+          {
+            "id": "b",
+            "text": "RJ-45"
+          },
+          {
+            "id": "c",
+            "text": "USB Type-C"
+          },
+          {
+            "id": "d",
+            "text": "BNC"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "RJ-45 is the standard connector used for Ethernet networking cables (Cat5, Cat5e, Cat6, etc.). RJ-11 is used for telephone connections."
@@ -83,18 +129,27 @@
   {
     "id": "hardware",
     "title": "Hardware",
-    "questions": [
+    "practiceQuestions": [
       {
         "id": "hw-q1",
         "text": "What is the function of the motherboard in a computer?",
         "options": [
-          { "id": "a", "text": "To store permanent data" },
+          {
+            "id": "a",
+            "text": "To store permanent data"
+          },
           {
             "id": "b",
             "text": "To serve as the main circuit board connecting all components"
           },
-          { "id": "c", "text": "To display graphics on the screen" },
-          { "id": "d", "text": "To cool the processor" }
+          {
+            "id": "c",
+            "text": "To display graphics on the screen"
+          },
+          {
+            "id": "d",
+            "text": "To cool the processor"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "The motherboard is the main circuit board that connects and allows communication between all computer components including CPU, RAM, storage, and expansion cards."
@@ -127,7 +182,10 @@
         "id": "hw-q3",
         "text": "What does RAM stand for and what is its purpose?",
         "options": [
-          { "id": "a", "text": "Read Access Memory — stores data permanently" },
+          {
+            "id": "a",
+            "text": "Read Access Memory — stores data permanently"
+          },
           {
             "id": "b",
             "text": "Random Access Memory — provides temporary fast storage for active programs and data"
@@ -143,18 +201,29 @@
         ],
         "correctAnswer": "b",
         "explanation": "RAM (Random Access Memory) is volatile memory that temporarily stores data and instructions for programs currently in use, allowing the CPU to access them quickly."
-      },
+      }
+    ],
+    "examQuestions": [
       {
         "id": "hw-q4",
         "text": "What is the purpose of a power supply unit (PSU)?",
         "options": [
-          { "id": "a", "text": "To store electricity for later use" },
+          {
+            "id": "a",
+            "text": "To store electricity for later use"
+          },
           {
             "id": "b",
             "text": "To convert AC power from the wall outlet to DC power for computer components"
           },
-          { "id": "c", "text": "To regulate internet speed" },
-          { "id": "d", "text": "To control the display brightness" }
+          {
+            "id": "c",
+            "text": "To regulate internet speed"
+          },
+          {
+            "id": "d",
+            "text": "To control the display brightness"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "The PSU converts alternating current (AC) from the wall outlet into the various direct current (DC) voltages needed by the computer's internal components."
@@ -163,10 +232,22 @@
         "id": "hw-q5",
         "text": "Which type of expansion slot is most commonly used for modern graphics cards?",
         "options": [
-          { "id": "a", "text": "PCI" },
-          { "id": "b", "text": "AGP" },
-          { "id": "c", "text": "PCIe x16" },
-          { "id": "d", "text": "ISA" }
+          {
+            "id": "a",
+            "text": "PCI"
+          },
+          {
+            "id": "b",
+            "text": "AGP"
+          },
+          {
+            "id": "c",
+            "text": "PCIe x16"
+          },
+          {
+            "id": "d",
+            "text": "ISA"
+          }
         ],
         "correctAnswer": "c",
         "explanation": "PCIe (PCI Express) x16 is the standard expansion slot used for modern graphics cards, providing high bandwidth needed for GPU communication with the CPU and RAM."
@@ -176,7 +257,7 @@
   {
     "id": "networking",
     "title": "Networking",
-    "questions": [
+    "practiceQuestions": [
       {
         "id": "net-q1",
         "text": "What is an IP address?",
@@ -189,8 +270,14 @@
             "id": "b",
             "text": "A unique numerical label assigned to each device on a network"
           },
-          { "id": "c", "text": "A type of encryption protocol" },
-          { "id": "d", "text": "A brand of networking equipment" }
+          {
+            "id": "c",
+            "text": "A type of encryption protocol"
+          },
+          {
+            "id": "d",
+            "text": "A brand of networking equipment"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "An IP (Internet Protocol) address is a unique numerical label assigned to each device connected to a computer network, used for identification and location addressing."
@@ -199,7 +286,10 @@
         "id": "net-q2",
         "text": "What is the difference between TCP and UDP?",
         "options": [
-          { "id": "a", "text": "TCP is wireless; UDP is wired" },
+          {
+            "id": "a",
+            "text": "TCP is wireless; UDP is wired"
+          },
           {
             "id": "b",
             "text": "TCP is connection-oriented and reliable; UDP is connectionless and faster but less reliable"
@@ -220,25 +310,48 @@
         "id": "net-q3",
         "text": "What is a subnet mask used for?",
         "options": [
-          { "id": "a", "text": "To encrypt network traffic" },
+          {
+            "id": "a",
+            "text": "To encrypt network traffic"
+          },
           {
             "id": "b",
             "text": "To determine which portion of an IP address refers to the network and which refers to the host"
           },
-          { "id": "c", "text": "To block unauthorized users" },
-          { "id": "d", "text": "To speed up internet connections" }
+          {
+            "id": "c",
+            "text": "To block unauthorized users"
+          },
+          {
+            "id": "d",
+            "text": "To speed up internet connections"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "A subnet mask divides an IP address into the network portion and the host portion, helping devices determine whether a destination is on the local network or a remote one."
-      },
+      }
+    ],
+    "examQuestions": [
       {
         "id": "net-q4",
         "text": "What port number does HTTPS use by default?",
         "options": [
-          { "id": "a", "text": "80" },
-          { "id": "b", "text": "21" },
-          { "id": "c", "text": "443" },
-          { "id": "d", "text": "25" }
+          {
+            "id": "a",
+            "text": "80"
+          },
+          {
+            "id": "b",
+            "text": "21"
+          },
+          {
+            "id": "c",
+            "text": "443"
+          },
+          {
+            "id": "d",
+            "text": "25"
+          }
         ],
         "correctAnswer": "c",
         "explanation": "HTTPS (HTTP Secure) uses port 443 by default. Regular HTTP uses port 80, FTP uses port 21, and SMTP uses port 25."
@@ -247,10 +360,22 @@
         "id": "net-q5",
         "text": "What does DNS do?",
         "options": [
-          { "id": "a", "text": "Encrypts all network traffic" },
-          { "id": "b", "text": "Translates domain names into IP addresses" },
-          { "id": "c", "text": "Assigns IP addresses automatically" },
-          { "id": "d", "text": "Monitors network performance" }
+          {
+            "id": "a",
+            "text": "Encrypts all network traffic"
+          },
+          {
+            "id": "b",
+            "text": "Translates domain names into IP addresses"
+          },
+          {
+            "id": "c",
+            "text": "Assigns IP addresses automatically"
+          },
+          {
+            "id": "d",
+            "text": "Monitors network performance"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "DNS (Domain Name System) translates human-readable domain names (like example.com) into IP addresses that computers use to identify each other on a network."

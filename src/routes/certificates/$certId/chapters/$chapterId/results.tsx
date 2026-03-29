@@ -89,7 +89,7 @@ function ResultsPage() {
 
   // Parse stored data
   let answers: Record<string, string> = {};
-  let questions: Question[] = chapter.questions;
+  let questions: Question[] = mode === "exam" ? chapter.examQuestions : chapter.practiceQuestions;
 
   if (raw) {
     const parsed: ExamData = JSON.parse(raw);

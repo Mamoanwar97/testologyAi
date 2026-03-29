@@ -2,15 +2,28 @@
   {
     "id": "all",
     "title": "All Chapters",
-    "questions": [
+    "practiceQuestions": [],
+    "examQuestions": [
       {
         "id": "all-q1",
         "text": "Which AWS service provides a fully managed relational database?",
         "options": [
-          { "id": "a", "text": "Amazon S3" },
-          { "id": "b", "text": "Amazon RDS" },
-          { "id": "c", "text": "Amazon EC2" },
-          { "id": "d", "text": "AWS Lambda" }
+          {
+            "id": "a",
+            "text": "Amazon S3"
+          },
+          {
+            "id": "b",
+            "text": "Amazon RDS"
+          },
+          {
+            "id": "c",
+            "text": "Amazon EC2"
+          },
+          {
+            "id": "d",
+            "text": "AWS Lambda"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "Amazon RDS (Relational Database Service) is a fully managed service that makes it easy to set up, operate, and scale relational databases in the cloud."
@@ -19,8 +32,14 @@
         "id": "all-q2",
         "text": "What is the AWS shared responsibility model?",
         "options": [
-          { "id": "a", "text": "AWS is responsible for everything" },
-          { "id": "b", "text": "The customer is responsible for everything" },
+          {
+            "id": "a",
+            "text": "AWS is responsible for everything"
+          },
+          {
+            "id": "b",
+            "text": "The customer is responsible for everything"
+          },
           {
             "id": "c",
             "text": "AWS manages security OF the cloud; customers manage security IN the cloud"
@@ -37,10 +56,22 @@
         "id": "all-q3",
         "text": "Which pricing model allows you to pay for compute capacity by the hour or second with no long-term commitments?",
         "options": [
-          { "id": "a", "text": "Reserved Instances" },
-          { "id": "b", "text": "Spot Instances" },
-          { "id": "c", "text": "On-Demand Instances" },
-          { "id": "d", "text": "Dedicated Hosts" }
+          {
+            "id": "a",
+            "text": "Reserved Instances"
+          },
+          {
+            "id": "b",
+            "text": "Spot Instances"
+          },
+          {
+            "id": "c",
+            "text": "On-Demand Instances"
+          },
+          {
+            "id": "d",
+            "text": "Dedicated Hosts"
+          }
         ],
         "correctAnswer": "c",
         "explanation": "On-Demand Instances let you pay for compute capacity by the hour or second with no long-term commitments or upfront payments."
@@ -49,10 +80,22 @@
         "id": "all-q4",
         "text": "Which AWS service is used to deploy and manage containerized applications?",
         "options": [
-          { "id": "a", "text": "Amazon ECS" },
-          { "id": "b", "text": "Amazon S3" },
-          { "id": "c", "text": "AWS CloudFormation" },
-          { "id": "d", "text": "Amazon Route 53" }
+          {
+            "id": "a",
+            "text": "Amazon ECS"
+          },
+          {
+            "id": "b",
+            "text": "Amazon S3"
+          },
+          {
+            "id": "c",
+            "text": "AWS CloudFormation"
+          },
+          {
+            "id": "d",
+            "text": "Amazon Route 53"
+          }
         ],
         "correctAnswer": "a",
         "explanation": "Amazon Elastic Container Service (ECS) is a fully managed container orchestration service used to deploy and manage containerized applications."
@@ -61,13 +104,22 @@
         "id": "all-q5",
         "text": "What does the AWS Well-Architected Framework provide?",
         "options": [
-          { "id": "a", "text": "Free AWS credits for startups" },
+          {
+            "id": "a",
+            "text": "Free AWS credits for startups"
+          },
           {
             "id": "b",
             "text": "A set of best practices and guidelines for building secure, high-performing, resilient cloud architectures"
           },
-          { "id": "c", "text": "Automatic code deployment pipelines" },
-          { "id": "d", "text": "Hardware provisioning templates" }
+          {
+            "id": "c",
+            "text": "Automatic code deployment pipelines"
+          },
+          {
+            "id": "d",
+            "text": "Hardware provisioning templates"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "The AWS Well-Architected Framework provides best practices across six pillars: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, and Sustainability."
@@ -77,7 +129,7 @@
   {
     "id": "cloud-concepts",
     "title": "Cloud Concepts",
-    "questions": [
+    "practiceQuestions": [
       {
         "id": "cc-q1",
         "text": "What is cloud computing?",
@@ -86,12 +138,18 @@
             "id": "a",
             "text": "On-demand delivery of IT resources over the Internet with pay-as-you-go pricing"
           },
-          { "id": "b", "text": "Storing files on a local hard drive" },
+          {
+            "id": "b",
+            "text": "Storing files on a local hard drive"
+          },
           {
             "id": "c",
             "text": "Running software only on physical servers in your office"
           },
-          { "id": "d", "text": "A type of programming language" }
+          {
+            "id": "d",
+            "text": "A type of programming language"
+          }
         ],
         "correctAnswer": "a",
         "explanation": "Cloud computing is the on-demand delivery of IT resources over the Internet with pay-as-you-go pricing, eliminating the need to buy, own, and maintain physical data centers."
@@ -100,10 +158,22 @@
         "id": "cc-q2",
         "text": "Which of the following is a benefit of cloud computing?",
         "options": [
-          { "id": "a", "text": "Fixed monthly hardware costs" },
-          { "id": "b", "text": "Trade upfront expense for variable expense" },
-          { "id": "c", "text": "Decreased application performance" },
-          { "id": "d", "text": "Longer deployment times" }
+          {
+            "id": "a",
+            "text": "Fixed monthly hardware costs"
+          },
+          {
+            "id": "b",
+            "text": "Trade upfront expense for variable expense"
+          },
+          {
+            "id": "c",
+            "text": "Decreased application performance"
+          },
+          {
+            "id": "d",
+            "text": "Longer deployment times"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "One of the key benefits of cloud computing is trading upfront capital expenses (like buying servers) for variable operational expenses (pay only for what you use)."
@@ -120,20 +190,40 @@
             "id": "b",
             "text": "The ability to acquire resources as needed and release them when no longer required"
           },
-          { "id": "c", "text": "The speed of the internet connection" },
-          { "id": "d", "text": "The durability of stored data" }
+          {
+            "id": "c",
+            "text": "The speed of the internet connection"
+          },
+          {
+            "id": "d",
+            "text": "The durability of stored data"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "Elasticity refers to the ability to automatically scale computing resources up or down based on demand, ensuring you only use and pay for what you need."
-      },
+      }
+    ],
+    "examQuestions": [
       {
         "id": "cc-q4",
         "text": "Which cloud deployment model runs applications entirely in the cloud?",
         "options": [
-          { "id": "a", "text": "On-premises" },
-          { "id": "b", "text": "Hybrid" },
-          { "id": "c", "text": "Cloud-based (public cloud)" },
-          { "id": "d", "text": "Private cloud only" }
+          {
+            "id": "a",
+            "text": "On-premises"
+          },
+          {
+            "id": "b",
+            "text": "Hybrid"
+          },
+          {
+            "id": "c",
+            "text": "Cloud-based (public cloud)"
+          },
+          {
+            "id": "d",
+            "text": "Private cloud only"
+          }
         ],
         "correctAnswer": "c",
         "explanation": "A cloud-based (public cloud) deployment runs all parts of the application in the cloud. Applications are either migrated to the cloud or designed and built directly in the cloud."
@@ -142,13 +232,22 @@
         "id": "cc-q5",
         "text": "What is the difference between IaaS, PaaS, and SaaS?",
         "options": [
-          { "id": "a", "text": "They are different programming languages" },
+          {
+            "id": "a",
+            "text": "They are different programming languages"
+          },
           {
             "id": "b",
             "text": "They represent different levels of cloud service abstraction: infrastructure, platform, and software"
           },
-          { "id": "c", "text": "They are AWS-specific pricing tiers" },
-          { "id": "d", "text": "They are types of internet protocols" }
+          {
+            "id": "c",
+            "text": "They are AWS-specific pricing tiers"
+          },
+          {
+            "id": "d",
+            "text": "They are types of internet protocols"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "IaaS (Infrastructure as a Service) provides basic building blocks. PaaS (Platform as a Service) removes the need to manage infrastructure. SaaS (Software as a Service) provides a complete product run by the provider."
@@ -158,15 +257,27 @@
   {
     "id": "security-and-compliance",
     "title": "Security and Compliance",
-    "questions": [
+    "practiceQuestions": [
       {
         "id": "sc-q1",
         "text": "Which AWS service provides multi-factor authentication (MFA) for user accounts?",
         "options": [
-          { "id": "a", "text": "Amazon GuardDuty" },
-          { "id": "b", "text": "AWS IAM" },
-          { "id": "c", "text": "Amazon CloudWatch" },
-          { "id": "d", "text": "AWS CloudTrail" }
+          {
+            "id": "a",
+            "text": "Amazon GuardDuty"
+          },
+          {
+            "id": "b",
+            "text": "AWS IAM"
+          },
+          {
+            "id": "c",
+            "text": "Amazon CloudWatch"
+          },
+          {
+            "id": "d",
+            "text": "AWS CloudTrail"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "AWS Identity and Access Management (IAM) supports MFA, adding an extra layer of security by requiring users to provide a second form of authentication beyond their password."
@@ -175,13 +286,22 @@
         "id": "sc-q2",
         "text": "What is the principle of least privilege?",
         "options": [
-          { "id": "a", "text": "Giving all users administrator access" },
+          {
+            "id": "a",
+            "text": "Giving all users administrator access"
+          },
           {
             "id": "b",
             "text": "Granting only the minimum permissions needed to perform a task"
           },
-          { "id": "c", "text": "Using the cheapest AWS services available" },
-          { "id": "d", "text": "Reducing the number of AWS accounts" }
+          {
+            "id": "c",
+            "text": "Using the cheapest AWS services available"
+          },
+          {
+            "id": "d",
+            "text": "Reducing the number of AWS accounts"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "The principle of least privilege means granting users and systems only the permissions they need to complete their tasks, reducing the potential impact of security breaches."
@@ -190,25 +310,48 @@
         "id": "sc-q3",
         "text": "Which AWS service automatically detects threats and monitors for malicious activity?",
         "options": [
-          { "id": "a", "text": "AWS Config" },
-          { "id": "b", "text": "Amazon Inspector" },
-          { "id": "c", "text": "Amazon GuardDuty" },
-          { "id": "d", "text": "AWS Artifact" }
+          {
+            "id": "a",
+            "text": "AWS Config"
+          },
+          {
+            "id": "b",
+            "text": "Amazon Inspector"
+          },
+          {
+            "id": "c",
+            "text": "Amazon GuardDuty"
+          },
+          {
+            "id": "d",
+            "text": "AWS Artifact"
+          }
         ],
         "correctAnswer": "c",
         "explanation": "Amazon GuardDuty is a threat detection service that continuously monitors for malicious activity and unauthorized behavior using machine learning, anomaly detection, and integrated threat intelligence."
-      },
+      }
+    ],
+    "examQuestions": [
       {
         "id": "sc-q4",
         "text": "What does AWS CloudTrail do?",
         "options": [
-          { "id": "a", "text": "Monitors application performance" },
+          {
+            "id": "a",
+            "text": "Monitors application performance"
+          },
           {
             "id": "b",
             "text": "Records API calls and user activity across your AWS account"
           },
-          { "id": "c", "text": "Provides content delivery network services" },
-          { "id": "d", "text": "Manages DNS routing" }
+          {
+            "id": "c",
+            "text": "Provides content delivery network services"
+          },
+          {
+            "id": "d",
+            "text": "Manages DNS routing"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "AWS CloudTrail records API calls made on your account, providing a history of AWS API calls for auditing, compliance monitoring, and operational troubleshooting."
@@ -217,10 +360,22 @@
         "id": "sc-q5",
         "text": "Which service helps you check whether your AWS environment follows security best practices?",
         "options": [
-          { "id": "a", "text": "AWS Trusted Advisor" },
-          { "id": "b", "text": "Amazon EC2" },
-          { "id": "c", "text": "AWS Lambda" },
-          { "id": "d", "text": "Amazon S3" }
+          {
+            "id": "a",
+            "text": "AWS Trusted Advisor"
+          },
+          {
+            "id": "b",
+            "text": "Amazon EC2"
+          },
+          {
+            "id": "c",
+            "text": "AWS Lambda"
+          },
+          {
+            "id": "d",
+            "text": "Amazon S3"
+          }
         ],
         "correctAnswer": "a",
         "explanation": "AWS Trusted Advisor inspects your AWS environment and provides recommendations across five categories: cost optimization, performance, security, fault tolerance, and service limits."

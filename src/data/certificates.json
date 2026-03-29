@@ -19,5 +19,12 @@
     "description": "Prove your competency in troubleshooting, networking, mobile devices, hardware, virtualization, and cloud computing.",
     "logo": "/logos/comptia.png",
     "chapters": ["all", "hardware", "networking"]
+  },
+  {
+    "id": "gen-ai",
+    "title": "CT-GenAI: GenAI for Software Testing",
+    "description": "Validate your knowledge of Generative AI fundamentals, prompt engineering, risk management, LLM-powered test infrastructure, and AI integration in test organizations.",
+    "logo": "/logos/genai.png",
+    "chapters": ["all", "chapter-1", "chapter-2", "chapter-3", "chapter-4", "chapter-5"]
   }
 ]

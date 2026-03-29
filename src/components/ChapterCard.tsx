@@ -10,7 +10,8 @@ interface ChapterCardProps {
 
 export default function ChapterCard({ chapter, certId }: ChapterCardProps) {
   const isAll = chapter.id === "all";
-  const questionCount = chapter.questions.length;
+  const practiceCount = chapter.practiceQuestions.length;
+  const examCount = chapter.examQuestions.length;
 
   return (
     <article className="flex flex-col rounded-xl border border-border bg-card p-6 transition hover:shadow-md">
@@ -27,7 +28,9 @@ export default function ChapterCard({ chapter, certId }: ChapterCardProps) {
             {chapter.title}
           </h3>
           <p className="text-xs text-muted-foreground">
-            {questionCount} {questionCount === 1 ? "question" : "questions"}
+            {isAll
+              ? `${examCount} ${examCount === 1 ? "question" : "questions"}`
+              : `${practiceCount + examCount} ${practiceCount + examCount === 1 ? "question" : "questions"}`}
           </p>
         </div>
       </div>

@@ -2,18 +2,28 @@
   {
     "id": "all",
     "title": "All Chapters",
-    "questions": [
+    "practiceQuestions": [],
+    "examQuestions": [
       {
         "id": "all-q1",
         "text": "What is Azure Resource Manager (ARM)?",
         "options": [
-          { "id": "a", "text": "A billing management tool" },
+          {
+            "id": "a",
+            "text": "A billing management tool"
+          },
           {
             "id": "b",
             "text": "The deployment and management service for Azure that provides a consistent management layer"
           },
-          { "id": "c", "text": "A virtual machine type" },
-          { "id": "d", "text": "A networking protocol" }
+          {
+            "id": "c",
+            "text": "A virtual machine type"
+          },
+          {
+            "id": "d",
+            "text": "A networking protocol"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "Azure Resource Manager is the deployment and management service for Azure. It provides a management layer that enables you to create, update, and delete resources in your Azure account."
@@ -22,10 +32,22 @@
         "id": "all-q2",
         "text": "Which Azure service provides serverless compute capabilities?",
         "options": [
-          { "id": "a", "text": "Azure Virtual Machines" },
-          { "id": "b", "text": "Azure Functions" },
-          { "id": "c", "text": "Azure Blob Storage" },
-          { "id": "d", "text": "Azure Virtual Network" }
+          {
+            "id": "a",
+            "text": "Azure Virtual Machines"
+          },
+          {
+            "id": "b",
+            "text": "Azure Functions"
+          },
+          {
+            "id": "c",
+            "text": "Azure Blob Storage"
+          },
+          {
+            "id": "d",
+            "text": "Azure Virtual Network"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "Azure Functions is a serverless compute service that lets you run event-triggered code without having to provision or manage infrastructure."
@@ -34,13 +56,22 @@
         "id": "all-q3",
         "text": "What is an Azure Availability Zone?",
         "options": [
-          { "id": "a", "text": "A pricing tier for Azure services" },
+          {
+            "id": "a",
+            "text": "A pricing tier for Azure services"
+          },
           {
             "id": "b",
             "text": "A unique physical location within an Azure region with independent power, cooling, and networking"
           },
-          { "id": "c", "text": "A type of Azure subscription" },
-          { "id": "d", "text": "A DNS management service" }
+          {
+            "id": "c",
+            "text": "A type of Azure subscription"
+          },
+          {
+            "id": "d",
+            "text": "A DNS management service"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "Azure Availability Zones are unique physical locations within an Azure region. Each zone is made up of one or more data centers with independent power, cooling, and networking."
@@ -49,10 +80,22 @@
         "id": "all-q4",
         "text": "What does Azure Active Directory (Entra ID) provide?",
         "options": [
-          { "id": "a", "text": "File storage services" },
-          { "id": "b", "text": "Identity and access management services" },
-          { "id": "c", "text": "Virtual machine hosting" },
-          { "id": "d", "text": "Content delivery network" }
+          {
+            "id": "a",
+            "text": "File storage services"
+          },
+          {
+            "id": "b",
+            "text": "Identity and access management services"
+          },
+          {
+            "id": "c",
+            "text": "Virtual machine hosting"
+          },
+          {
+            "id": "d",
+            "text": "Content delivery network"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "Azure Active Directory (now Microsoft Entra ID) is a cloud-based identity and access management service that helps employees sign in and access resources."
@@ -61,10 +104,22 @@
         "id": "all-q5",
         "text": "Which Azure service is used for building, deploying, and managing containerized applications?",
         "options": [
-          { "id": "a", "text": "Azure Kubernetes Service (AKS)" },
-          { "id": "b", "text": "Azure Blob Storage" },
-          { "id": "c", "text": "Azure Logic Apps" },
-          { "id": "d", "text": "Azure Monitor" }
+          {
+            "id": "a",
+            "text": "Azure Kubernetes Service (AKS)"
+          },
+          {
+            "id": "b",
+            "text": "Azure Blob Storage"
+          },
+          {
+            "id": "c",
+            "text": "Azure Logic Apps"
+          },
+          {
+            "id": "d",
+            "text": "Azure Monitor"
+          }
         ],
         "correctAnswer": "a",
         "explanation": "Azure Kubernetes Service (AKS) simplifies deploying and managing containerized applications by offloading the operational overhead to Azure."
@@ -74,18 +129,27 @@
   {
     "id": "cloud-concepts",
     "title": "Cloud Concepts",
-    "questions": [
+    "practiceQuestions": [
       {
         "id": "cc-q1",
         "text": "What does 'high availability' mean in cloud computing?",
         "options": [
-          { "id": "a", "text": "Services are always free of charge" },
+          {
+            "id": "a",
+            "text": "Services are always free of charge"
+          },
           {
             "id": "b",
             "text": "Systems are designed to remain operational with minimal downtime"
           },
-          { "id": "c", "text": "Data is stored in a single location" },
-          { "id": "d", "text": "Applications run only during business hours" }
+          {
+            "id": "c",
+            "text": "Data is stored in a single location"
+          },
+          {
+            "id": "d",
+            "text": "Applications run only during business hours"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "High availability refers to systems designed to remain operational and accessible with minimal downtime, typically achieved through redundancy and failover mechanisms."
@@ -102,8 +166,14 @@
             "id": "b",
             "text": "Paying only for the resources you actually use"
           },
-          { "id": "c", "text": "Buying hardware upfront" },
-          { "id": "d", "text": "Free unlimited usage" }
+          {
+            "id": "c",
+            "text": "Buying hardware upfront"
+          },
+          {
+            "id": "d",
+            "text": "Free unlimited usage"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "The consumption-based model means you only pay for the cloud resources that you use, which helps reduce costs since you don't pay for unused capacity."
@@ -112,25 +182,48 @@
         "id": "cc-q3",
         "text": "Which of the following is an example of PaaS (Platform as a Service)?",
         "options": [
-          { "id": "a", "text": "Azure Virtual Machines" },
-          { "id": "b", "text": "Azure App Service" },
-          { "id": "c", "text": "Microsoft 365" },
-          { "id": "d", "text": "Azure Virtual Network" }
+          {
+            "id": "a",
+            "text": "Azure Virtual Machines"
+          },
+          {
+            "id": "b",
+            "text": "Azure App Service"
+          },
+          {
+            "id": "c",
+            "text": "Microsoft 365"
+          },
+          {
+            "id": "d",
+            "text": "Azure Virtual Network"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "Azure App Service is a PaaS offering that allows developers to build, deploy, and scale web apps without managing the underlying infrastructure."
-      },
+      }
+    ],
+    "examQuestions": [
       {
         "id": "cc-q4",
         "text": "What is scalability in cloud computing?",
         "options": [
-          { "id": "a", "text": "The ability to recover from failures" },
+          {
+            "id": "a",
+            "text": "The ability to recover from failures"
+          },
           {
             "id": "b",
             "text": "The ability to increase or decrease resources to meet demand"
           },
-          { "id": "c", "text": "The speed of data transfer" },
-          { "id": "d", "text": "The geographic distribution of data centers" }
+          {
+            "id": "c",
+            "text": "The speed of data transfer"
+          },
+          {
+            "id": "d",
+            "text": "The geographic distribution of data centers"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "Scalability is the ability to adjust resources to meet demand. Vertical scaling adds more power to existing resources, while horizontal scaling adds more instances."
@@ -139,13 +232,22 @@
         "id": "cc-q5",
         "text": "What is a Service Level Agreement (SLA)?",
         "options": [
-          { "id": "a", "text": "A software license" },
+          {
+            "id": "a",
+            "text": "A software license"
+          },
           {
             "id": "b",
             "text": "A formal agreement between a service provider and customer defining performance standards"
           },
-          { "id": "c", "text": "A type of Azure subscription" },
-          { "id": "d", "text": "A programming framework" }
+          {
+            "id": "c",
+            "text": "A type of Azure subscription"
+          },
+          {
+            "id": "d",
+            "text": "A programming framework"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "An SLA is a formal agreement that defines performance targets and commitments a cloud provider makes to its customers, typically including uptime guarantees."
@@ -155,18 +257,27 @@
   {
     "id": "azure-services",
     "title": "Core Azure Services",
-    "questions": [
+    "practiceQuestions": [
       {
         "id": "as-q1",
         "text": "What is Azure Blob Storage used for?",
         "options": [
-          { "id": "a", "text": "Running virtual machines" },
+          {
+            "id": "a",
+            "text": "Running virtual machines"
+          },
           {
             "id": "b",
             "text": "Storing large amounts of unstructured data like text or binary data"
           },
-          { "id": "c", "text": "Managing DNS records" },
-          { "id": "d", "text": "Sending email notifications" }
+          {
+            "id": "c",
+            "text": "Managing DNS records"
+          },
+          {
+            "id": "d",
+            "text": "Sending email notifications"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "Azure Blob Storage is optimized for storing massive amounts of unstructured data, such as text, binary data, images, and documents."
@@ -175,10 +286,22 @@
         "id": "as-q2",
         "text": "Which Azure service provides a managed relational database?",
         "options": [
-          { "id": "a", "text": "Azure Cosmos DB" },
-          { "id": "b", "text": "Azure SQL Database" },
-          { "id": "c", "text": "Azure Table Storage" },
-          { "id": "d", "text": "Azure Queue Storage" }
+          {
+            "id": "a",
+            "text": "Azure Cosmos DB"
+          },
+          {
+            "id": "b",
+            "text": "Azure SQL Database"
+          },
+          {
+            "id": "c",
+            "text": "Azure Table Storage"
+          },
+          {
+            "id": "d",
+            "text": "Azure Queue Storage"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "Azure SQL Database is a fully managed relational database service built on the latest stable version of the Microsoft SQL Server database engine."
@@ -187,28 +310,48 @@
         "id": "as-q3",
         "text": "What does Azure Virtual Network (VNet) enable?",
         "options": [
-          { "id": "a", "text": "Running serverless functions" },
+          {
+            "id": "a",
+            "text": "Running serverless functions"
+          },
           {
             "id": "b",
             "text": "Secure communication between Azure resources, the internet, and on-premises networks"
           },
-          { "id": "c", "text": "Storing files in the cloud" },
-          { "id": "d", "text": "Monitoring application performance" }
+          {
+            "id": "c",
+            "text": "Storing files in the cloud"
+          },
+          {
+            "id": "d",
+            "text": "Monitoring application performance"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "Azure Virtual Network enables Azure resources to securely communicate with each other, the internet, and on-premises networks through an isolated and segmented network."
-      },
+      }
+    ],
+    "examQuestions": [
       {
         "id": "as-q4",
         "text": "What is Azure Cosmos DB?",
         "options": [
-          { "id": "a", "text": "A relational database service" },
+          {
+            "id": "a",
+            "text": "A relational database service"
+          },
           {
             "id": "b",
             "text": "A globally distributed, multi-model NoSQL database service"
           },
-          { "id": "c", "text": "A file storage service" },
-          { "id": "d", "text": "A compute service" }
+          {
+            "id": "c",
+            "text": "A file storage service"
+          },
+          {
+            "id": "d",
+            "text": "A compute service"
+          }
         ],
         "correctAnswer": "b",
         "explanation": "Azure Cosmos DB is a globally distributed, multi-model database service designed for low-latency and highly responsive applications with support for multiple data models."
@@ -217,10 +360,22 @@
         "id": "as-q5",
         "text": "Which Azure service helps distribute traffic across multiple servers?",
         "options": [
-          { "id": "a", "text": "Azure Load Balancer" },
-          { "id": "b", "text": "Azure Key Vault" },
-          { "id": "c", "text": "Azure DevOps" },
-          { "id": "d", "text": "Azure Active Directory" }
+          {
+            "id": "a",
+            "text": "Azure Load Balancer"
+          },
+          {
+            "id": "b",
+            "text": "Azure Key Vault"
+          },
+          {
+            "id": "c",
+            "text": "Azure DevOps"
+          },
+          {
+            "id": "d",
+            "text": "Azure Active Directory"
+          }
         ],
         "correctAnswer": "a",
         "explanation": "Azure Load Balancer distributes incoming network traffic across multiple servers to ensure no single server bears too much load, improving availability and reliability."

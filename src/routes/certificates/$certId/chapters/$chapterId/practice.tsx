@@ -69,7 +69,7 @@ function PracticePage() {
     });
   }, []);
 
-  const totalQuestions = chapter.questions.length;
+  const totalQuestions = chapter.practiceQuestions.length;
   const answeredCount = Object.keys(answers).length;
   const allAnswered = answeredCount === totalQuestions;
 
@@ -78,7 +78,7 @@ function PracticePage() {
     const key = `testology:${certId}:${chapterId}:practice`;
     localStorage.setItem(
       key,
-      JSON.stringify({ answers, questions: chapter.questions }),
+      JSON.stringify({ answers, questions: chapter.practiceQuestions }),
     );
     window.location.href = `${import.meta.env.BASE_URL}certificates/${certId}/chapters/${chapterId}/results?mode=practice`;
   }
@@ -121,7 +121,7 @@ function PracticePage() {
         ) : (
           <>
             <section aria-label="Practice questions" className="space-y-6">
-              {chapter.questions.map((question, index) => (
+              {chapter.practiceQuestions.map((question, index) => (
                 <QuestionCard
                   key={question.id}
                   question={question}

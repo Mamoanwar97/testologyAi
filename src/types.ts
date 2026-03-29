@@ -14,7 +14,8 @@ export interface Question {
 export interface Chapter {
   id: string;
   title: string;
-  questions: Question[];
+  practiceQuestions: Question[];
+  examQuestions: Question[];
 }
 
 export interface Certificate {

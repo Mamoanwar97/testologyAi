@@ -63,7 +63,7 @@ function NotFoundComponent() {
 function ExamPage() {
   const { certificate, chapter } = Route.useLoaderData();
   const { certId, chapterId } = Route.useParams();
-  const exam = useExamState(certId, chapterId, chapter.questions);
+  const exam = useExamState(certId, chapterId, chapter.examQuestions);
   const [showReviewModal, setShowReviewModal] = useState(false);
   const [showTimesUp, setShowTimesUp] = useState(false);
 
@@ -136,7 +136,7 @@ function ExamPage() {
   }
 
   // Empty state — chapter has no questions
-  if (chapter.questions.length === 0) {
+  if (chapter.examQuestions.length === 0) {
     return (
       <main className="flex min-h-[60vh] flex-col items-center justify-center px-4 py-16 text-center">
         <img
